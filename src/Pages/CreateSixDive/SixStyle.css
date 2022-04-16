@@ -1,1 +1,7 @@
-.dive-dive {}
+.dive-valid {
+    color: green;
+}
+
+.dive-invalid {
+    color: red;
+}

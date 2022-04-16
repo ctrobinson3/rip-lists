@@ -2,13 +2,14 @@ export function diveArrayFunction() {
 
     //dive class
     class Dive {
-        constructor(direction, rotation, position, difficulty, cat, num) {
+        constructor(direction, rotation, position, difficulty, cat, num, key) {
             this.direction = direction;
             this.rotation = rotation;
             this.position = position;
             this.difficulty = difficulty;
             this.cat = cat;
             this.num = num;
+            this.key = { num };
         }
     }
 
