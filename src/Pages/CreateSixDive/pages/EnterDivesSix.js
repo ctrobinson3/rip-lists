@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 import DiveCheck from '../../../Components/DiveLists/DiveCheck'
 import { diveArrayFunction } from '../../../Components/DiveLists/DiveArray'
+import DiveModal from './components/DiveModal'
+import RulesModal from './components/RulesModal'
 
 const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
     //deconstruct
@@ -27,10 +29,32 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
         next()
     }
 
+    //modals
+    const [openDiveModal, setOpenDiveModal] = useState(false)
+    const [openRulesModal, setOpenRulesModal] = useState(false)
+
 
     return (
-        <div>
+        <div className='six-enter-dives'>
             <h1>Enter Dives</h1>
+            {/* Rules modal */}
+            <button
+                type='button'
+                className='modal-button'
+                onClick={() => {
+                    setOpenRulesModal(true)
+                }}
+            >Rules</button>
+            {openRulesModal && <RulesModal closeRulesModal = {setOpenRulesModal} />}
+            {/* Dives Modal */}
+            <button
+                type='button'
+                className='modal-button'
+                onClick={() => {
+                    setOpenDiveModal(true)
+                }}
+            >Dives</button>
+            {openDiveModal && <DiveModal closeDiveModal = {setOpenDiveModal} />}
             <form>
                 {/* First Dive */}
                 <div className='input-div'>
@@ -99,6 +123,8 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                     />
                 </div>
             </form>
+
+            {/* butttons */}
             <button
                 type='button'
                 className='form-button'
