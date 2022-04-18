@@ -2,12 +2,12 @@ import React from 'react'
 
 const DiverInfoSix = ({ info, onChange, next }) => {
     return (
-        <div>
-            <h1>Diver Info</h1>
+        <div className='six-container'>
+            <h1 className='header'>Diver Info</h1>
             <form className='six-form'>
                 {/* Diver Name */}
                 <div className='input-div'>
-                    <label htmlFor="name" className='formLabel'>Diver's Name</label>
+                    <label htmlFor="name" className='form-label'>Diver's Name</label>
                     <input
                         className='form-input'
                         id='name'
@@ -18,7 +18,7 @@ const DiverInfoSix = ({ info, onChange, next }) => {
                 </div>
                 {/* Team */}
                 <div className='input-div'>
-                    <label className='formLabel'>Team</label>
+                    <label className='form-label'>Team</label>
                     <input
                         className='form-input'
                         type='text'
@@ -29,7 +29,7 @@ const DiverInfoSix = ({ info, onChange, next }) => {
                 </div>
                 {/* Coach */}
                 <div className='input-div'>
-                    <label className='formLabel'>Coach's Name</label>
+                    <label className='form-label'>Coach's Name</label>
                     <input
                         className='form-input'
                         type='text'
@@ -40,7 +40,7 @@ const DiverInfoSix = ({ info, onChange, next }) => {
                 </div>
                 {/* Meet */}
                 <div className='input-div'>
-                    <label className='formLabel'>Meet Name</label>
+                    <label className='form-label'>Meet Name</label>
                     <input
                         className='form-input'
                         type='text'
@@ -51,7 +51,7 @@ const DiverInfoSix = ({ info, onChange, next }) => {
                 </div>
                 {/* Date */}
                 <div className='input-div'>
-                    <label className='formLabel'>Date</label>
+                    <label className='form-label'>Date</label>
                     <input
                         className='form-input'
                         type='text'
@@ -63,7 +63,7 @@ const DiverInfoSix = ({ info, onChange, next }) => {
             </form>
             <button
                 type='button'
-                className='form-button'
+                className='form-button next'
                 onClick={next}>
                 Next
             </button>

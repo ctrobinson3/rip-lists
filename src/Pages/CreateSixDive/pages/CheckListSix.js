@@ -1,6 +1,5 @@
-import React, { useState } from 'react'
+import React from 'react'
 import Dives from './components/dives'
-
 
 
 const CheckListSix = ({ next, back, entry }) => {
@@ -10,8 +9,8 @@ const CheckListSix = ({ next, back, entry }) => {
 
 
     return (
-        <div>
-            <h1>List Check</h1>
+        <div className='six-container'>
+            <h1 className='header'>List Check</h1>
 
             <Dives
                 entry={entry}
@@ -19,13 +18,13 @@ const CheckListSix = ({ next, back, entry }) => {
 
             <button
                 type='button'
-                className='form-button'
+                className='form-button next'
                 onClick={next}>
                 Submit
             </button>
             <button
                 type='button'
-                className='form-button'
+                className='form-button back'
                 onClick={back}>
                 Back
             </button>

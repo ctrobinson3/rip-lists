@@ -6,18 +6,6 @@ import CheckListSix from './pages/CheckListSix'
 import './SixStyle.css'
 
 const SixMain = () => {
-    //constructor
-    class Dive {
-        constructor(direction, rotation, position, difficulty, cat, num) {
-            this.direction = direction;
-            this.rotation = rotation;
-            this.position = position;
-            this.difficulty = difficulty;
-            this.cat = cat;
-            this.num = num;
-        }
-    }
-
     //useState
     //Diver Info
     const [info, setInfo] = useState({
@@ -74,14 +62,19 @@ const SixMain = () => {
     switch (curStep) {
         case 1:
             return (
+            <>
+                <h2 className='h2'>Six Dives</h2>
                 <DiverInfoSix
                     info={info}
                     onChange={handleInfo}
                     next={next}
                 />
+            </>
             )
         case 2:
             return (
+                <>
+                <h2 className='h2'>Six Dives</h2>
                 <EnterDivesSix
                     dive={dive}
                     onChange={handleDive}
@@ -89,20 +82,29 @@ const SixMain = () => {
                     next={next}
                     back={back}
                 />
+                </>
             )
         case 3:
             return (
+                <>
+                <h2 className='h2'>Six Dives</h2>
                 <CheckListSix
                     next={next}
                     back={back}
                     entry={entry}
                 />
+                </>
             )
         case 4:
             return (
+                <>
+                <h2 className='h2'>Six Dives</h2>
                 <DiveCardSix
                     back={back}
+                    dive={entry}
+                    info={info}
                 />
+                </>
             )
     }
 }

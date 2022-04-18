@@ -1,7 +1,112 @@
+:root{
+    --primary: #0077B6;
+    --secondary: #48CAE4;
+    --dark: #03045E;
+    --mid: #023E8A;
+    --light: #CAF0F8;
+}
+
+/* General */
+.six-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.h2{
+    font-weight:400;
+    padding-left: 20px;
+}
+
+.header{
+    font-weight: 800;
+    font-size: 10mm;
+}
+
+.input-div{
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+}
+
+.form-label{
+    font-size: 6mm;
+    font-weight: 400;
+}
+
+.form-input{
+    padding: 0.9rem 2.8rem;
+    font-weight: 600;
+    border-radius: 2rem;
+    font-size: 1rem;
+    margin: 0.5rem 0.5rem 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.form-button{
+    margin-top: 20px;
+    color: var(--dark);
+    border: 3px solid;
+    border-radius: 2rem;
+}
+
+.form-button:active{
+    background-color: var(--light);
+}
+
+.next{
+    border-color: var(--dark);
+    font-size: 7mm;    
+    padding: 1rem 5rem;
+}
+
+.back{    
+    border-color: var(--primary);
+    font-size: 5mm;
+    padding: .5rem 3rem;
+}
+
+/* DiverInfoSix */
+.modal-button{
+    border-radius: 2rem;
+    padding: 10px;
+    margin-left: 10px;
+    margin-right: 10px;
+    border: 3px solid;
+    border-color: var(--primary)
+}
+
+.modal-button:active{
+    background-color: var(--light);
+}
+
+/* EnterDiveSix */
+body.active-modal {
+    overflow-y: hidden;
+}
+
 .dive-valid {
-    color: green;
+    color: black;
 }
 
 .dive-invalid {
+    font-weight: 600;
     color: red;
+}
+
+
+.dive-correct,
+.dive-error{
+    font-size: 6mm;
+    font-weight: 800;
+    text-decoration-line: underline;
+}
+.dive-error {
+    color: red;
+}
+
+.dive-correct{
+    color: green;
 }

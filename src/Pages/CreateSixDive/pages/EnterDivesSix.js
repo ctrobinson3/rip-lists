@@ -32,12 +32,18 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
     //modals
     const [openDiveModal, setOpenDiveModal] = useState(false)
     const [openRulesModal, setOpenRulesModal] = useState(false)
+    if (openDiveModal || openRulesModal){
+        document.body.classList.add('active-modal')
+    } else{
+        document.body.classList.remove('active-modal')
+    }
 
 
     return (
-        <div className='six-enter-dives'>
-            <h1>Enter Dives</h1>
+        <div className='six-container'>
+            <h1 className='header'>Enter Dives</h1>
             {/* Rules modal */}
+            <div className='modal-but-div'>
             <button
                 type='button'
                 className='modal-button'
@@ -55,12 +61,13 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 }}
             >Dives</button>
             {openDiveModal && <DiveModal closeDiveModal = {setOpenDiveModal} />}
-            <form>
+            </div>
+            <form className='six-form'>
                 {/* First Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>First Dive</label>
+                    <label className='form-label'>First Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d1'
                         value={d1}
@@ -69,9 +76,9 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 </div>
                 {/* Second Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>Second Dive</label>
+                    <label className='form-label'>Second Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d2'
                         value={d2}
@@ -80,9 +87,9 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 </div>
                 {/* Third Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>Third Dive</label>
+                    <label className='form-label'>Third Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d3'
                         value={d3}
@@ -91,9 +98,9 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 </div>
                 {/* Fourth Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>Fourth Dive</label>
+                    <label className='form-label'>Fourth Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d4'
                         value={d4}
@@ -102,9 +109,9 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 </div>
                 {/* Fifth Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>Fifth Dive</label>
+                    <label className='form-label'>Fifth Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d5'
                         value={d5}
@@ -113,9 +120,9 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
                 </div>
                 {/* Sixth Dive */}
                 <div className='input-div'>
-                    <label className='formLabel'>Sixth Dive</label>
+                    <label className='form-label'>Sixth Dive</label>
                     <input
-                        className='formInputName'
+                        className='form-input'
                         type='text'
                         id='d6'
                         value={d6}
@@ -127,13 +134,13 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
             {/* butttons */}
             <button
                 type='button'
-                className='form-button'
+                className='form-button next'
                 onClick={findDives}>Next
             </button>
 
             <button
                 type='button'
-                className='form-button'
+                className='form-button back'
                 onClick={back}>
                 Back
             </button>

@@ -1,0 +1,46 @@
+:root{
+    --primary: #0077B6;
+    --secondary: #48CAE4;
+    --dark: #03045E;
+    --mid: #023E8A;
+    --light: #CAF0F8;
+}
+
+.navbar {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    height: 85px;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--dark);
+  }
+
+  .navbar-nav{
+    width: 100%;
+    margin-top: 0.75rem;
+    overflow-y: hidden;;
+  }
+
+  .navbar-ul{
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+  .navbar-item{
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.navbar-icon{
+    font-size: 10mm;
+    color: white;
+}

@@ -43,7 +43,7 @@ const dives = ({ entry }) => {
     const categoryCheck = () => {
         const oAmt = Array.from(new Set(optList))
         if (oAmt.length < 4) {
-            return <div className='dive-error'>Four categories are not represented</div>
+            return <div className='dive-error'>*Four categories are not represented</div>
         }
         else
             enoughCategories = true
@@ -52,13 +52,13 @@ const dives = ({ entry }) => {
     //check for repeated dives
     const repeatedDives = () => {
         if (repeatDives)
-            return <div className='dive-error'>Dives are repeated</div>
+            return <div className='dive-error'>*Dives are repeated</div>
     }
 
     //checks for 6 valid dives
     const checkSix = () => {
         if (!sixDives)
-            return <div className='dive-error'>Some dives were entered incorrectly</div>
+            return <div className='dive-error'>*Some dives were entered incorrectly</div>
 
     }
 
@@ -71,10 +71,12 @@ const dives = ({ entry }) => {
     return (
         <>
             <div className='dive-display__header'>
+                {checkSix()}
                 {repeatedDives()}
                 {categoryCheck()}
                 {allGood()}
             </div>
+            <h3>Entered Dives:</h3>
             <div className='dive-display'>
                 {displayedDive}
             </div>
