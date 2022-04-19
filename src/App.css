@@ -1,0 +1,11 @@
+:root{
+    --primary: #0077B6;
+    --secondary: #48CAE4;
+    --dark: #03045E;
+    --mid: #023E8A;
+    --light: #CAF0F8;
+}
+
+body{
+    background-color: var(--secondary);
+}

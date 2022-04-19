@@ -1,0 +1,41 @@
+:root{
+    --primary: #0077B6;
+    --secondary: #48CAE4;
+    --dark: #03045E;
+    --mid: #023E8A;
+    --light: #CAF0F8;
+}
+
+.home-header,
+.home-form-header,
+.home-main,
+.home-div,
+.home-select-div{
+    display: flex;
+    justify-content: center;
+}
+
+.home-div{
+    flex-direction: column;
+    height: 100vh;
+    color: white;
+}
+
+.home-but{
+    padding: 20px 50px;
+    margin: 20px;
+    font-weight: 800;
+    border:none;
+}
+
+.home-button-active{
+    border-radius: 2rem;
+    background-color: var(--dark);
+    color: white;
+}
+
+.home-select{
+    padding: 10px 50px;
+    border: none;
+    font-weight: 800;
+}

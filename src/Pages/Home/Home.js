@@ -49,9 +49,10 @@ export default function Home() {
                     <h2 className='home-form-header'>
                         Dive Amount:
                     </h2>
+                    <div className='home-buttons'>
                     <button
                         type='button'
-                        className={type === '6-dive' ? 'form-button-active' : 'form-button'}
+                        className={type === '6-dive' ? 'home-button-active home-but' : 'form-button home-but'}
                         id='type'
                         value='6-dive'
                         onClick={onMutate}>
@@ -59,13 +60,16 @@ export default function Home() {
                     </button>
                     <button
                         type='button'
-                        className={type === '11-dive' ? 'form-button-active' : 'form-button'}
+                        className={type === '11-dive' ? 'home-button-active home-but' : 'form-button home-but'}
                         id='type'
                         value='11-dive'
                         onClick={onMutate}>
                         11 Dive
                     </button>
-                    <button type='submit' className='form-button'>Select</button>
+                    </div>
+                    <div className='home-select-div'>
+                    <button type='submit' className='form-button home-select'>Select</button>
+                    </div>
                 </form>
             </main>
         </div>
