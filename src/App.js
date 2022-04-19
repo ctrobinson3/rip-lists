@@ -1,4 +1,4 @@
-import './App.css';
+import './Components/Styles/app.css'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SixMain from './Pages/CreateSixDive/SixMain'
 import ElevenMain from './Pages/CreateElevenDive/ElevenMain'

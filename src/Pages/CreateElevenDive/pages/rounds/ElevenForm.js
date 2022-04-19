@@ -1,15 +1,19 @@
 import React from 'react'
+import { useRecoilState } from 'recoil'
+import { diveState } from '../Recoil/atoms'
 
-export const FirstRoundInput = ({ dive }) => {
-    console.log(dive)
+export const FirstRoundInput = () => {
+    const [diveName, setDiveName] = useRecoilState(diveState)
+
+    const handleChange = (e) => {
+        setDiveName(e.target.value)
+    }
 
   return (
     <div className='eleven-info-div'>
         <input
-            className='formInputName '
-            type='text'
-            id='d1'
-            placeholder='(#)'
+            value={diveName}
+            onChange={handleChange}
         />
     </div>
   )

@@ -1,5 +1,5 @@
 import React from 'react'
-import './modal.css'
+import '../../../../Components/Styles/modal.css'
 
 const RulesModal = ({closeRulesModal}) => {
     return (

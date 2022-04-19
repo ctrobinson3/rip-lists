@@ -1,82 +1,18 @@
 import  {useState} from 'react'
-import './ElevenStyle.css'
+import { useRecoilValue } from 'recoil'
+import '../../Components/Styles/formstyle.css'
 import DiverInfoEleven from './pages/DiverInfoEleven'
 import EnterElevenDives from './pages/EnterElevenDives'
 import CheckListEleven from './pages/CheckListEleven'
 import DiveCardEleven from './pages/DiveCardEleven'
-import ElevenForm, { FirstRoundInput, SecondRoundInput, ThirdRoundInput } from './pages/rounds/ElevenForm'
+
+import {diveState} from './pages/Recoil/atoms'
+
 
 const ElevenMain = () => {
-  //Diver info
-  const [info, setInfo] = useState({
-      name: '',
-      team: '',
-      coach:'',
-      meet: '',
-      date: '',
-  })
-  //Entered data
-  const [dive, setDive] = useState({
-    d1: '',
-    d2: '',
-    d3: '',
-    d4: '',
-    d5: '',
+    const diveName = useRecoilValue(diveState)
 
-    d6: '',
-    d7: '',
-    d8: '',
-
-    d9: '',
-    d10: '',
-    d11: ''
-  })
-  //Optionals
-  const [opt, setOpt] = useState({
-      o1: false,
-      o2: true,
-      o3: false,
-      o4: true,
-      o5: true,
-
-      o6: false,
-      o7: true,
-      o8: false,
-
-      o9: true,
-      o10: false,
-      o11: true,
-  })
-  //Dives
-  const [entry, setEntry] = useState([])
-
-  //onChange
-  //diver info
-  const handleInfo = (e) => {
-      setInfo({
-          ...info,
-          [e.target.id]: e.target.value
-      })
-  }
-  //dives
-  const handleDive = (e) => {
-    setDive({
-        ...dive,
-        [e.target.id]: e.target.value
-        })
-    }
-    //optinals
-    const handleOpt = (e) => {
-        setOpt({
-            ...opt,
-            [e.target.id]: e.target.value
-        })
-    }
-
-    //set entry
-    const handleEntry = (e) => {
-        setEntry(e)
-    }
+  
 
     //pages
     const [curStep, setStep] = useState(1)
@@ -94,8 +30,6 @@ const ElevenMain = () => {
                 <>
                 <h2 className='h2'>Eleven Dives</h2>
                     <DiverInfoEleven
-                        info={info}
-                        onChange={handleInfo}
                         next={next}
                     />
                 </>
@@ -107,7 +41,6 @@ const ElevenMain = () => {
                     <EnterElevenDives                        
                         next={next}
                         back={back}
-                        dive={dive}
                     />
                 </>
             )
@@ -118,7 +51,6 @@ const ElevenMain = () => {
                     <CheckListEleven
                         next={next}
                         back={back}
-                        entry={entry}
                     />
                 </>
             )
@@ -128,9 +60,6 @@ const ElevenMain = () => {
                     <h2 className='h2'>Eleven Dives</h2>
                     <DiveCardEleven
                         back={back}
-                        dive={entry}
-                        info={info}
-                        opt={opt}
                     />
                 </>
             )        

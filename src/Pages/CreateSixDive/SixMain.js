@@ -3,7 +3,7 @@ import DiveCardSix from './pages/DiveCardSix'
 import DiverInfoSix from './pages/DiverInfoSix'
 import EnterDivesSix from './pages/EnterDivesSix'
 import CheckListSix from './pages/CheckListSix'
-import './SixStyle.css'
+import '../../Components/Styles/formstyle.css'
 
 const SixMain = () => {
     //useState
