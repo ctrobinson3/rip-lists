@@ -3,7 +3,7 @@ import FirstRound from './FirstRound'
 import SecondRound from './SecondRound'
 import ThirdRound from './ThirdRound'
 
-const RoundIndex = ({dive}) => {
+const RoundIndex = ({dives, onChange, onClick, opt}) => {
 
     const [formPage, setFormPage] = useState(1)
     const formNext = () => {
@@ -18,7 +18,10 @@ const RoundIndex = ({dive}) => {
             return (
                 <FirstRound
                     next={formNext}
-                    dive={dive}
+                    dives={dives}
+                    onChange={onChange}
+                    onClick={onClick}
+                    opt={opt}
                 />
             )
         case 2:
@@ -26,13 +29,20 @@ const RoundIndex = ({dive}) => {
                 <SecondRound
                     next={formNext}
                     back={formBack}
-                    
+                    dives={dives}
+                    onChange={onChange}
+                    onClick={onClick}
+                    opt={opt}
                 />
             )
         default:
             return (
                 <ThirdRound
                     back={formBack}
+                    dives={dives}
+                    onChange={onChange}
+                    onClick={onClick}
+                    opt={opt}
                 />
             )
     }

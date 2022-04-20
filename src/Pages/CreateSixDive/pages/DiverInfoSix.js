@@ -2,7 +2,7 @@ import React from 'react'
 
 const DiverInfoSix = ({ info, onChange, next }) => {
     return (
-        <div className='six-container'>
+        <div className='page-container'>
             <h1 className='header'>Diver Info</h1>
             <form className='six-form'>
                 {/* Diver Name */}

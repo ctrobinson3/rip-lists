@@ -135,7 +135,7 @@ const DiveCardSix = ({back, dive, info}) => {
 
 
     return (<>
-        <div className="six-container">            
+        <div className="page-container">            
                 <h1>Download Dive Card</h1>
                 <h3>Name PDF:</h3>
                 <input className="form-input" onChange={onChange}></input>

@@ -1,18 +1,54 @@
 import  {useState} from 'react'
-import { useRecoilValue } from 'recoil'
 import '../../Components/Styles/formstyle.css'
 import DiverInfoEleven from './pages/DiverInfoEleven'
 import EnterElevenDives from './pages/EnterElevenDives'
 import CheckListEleven from './pages/CheckListEleven'
 import DiveCardEleven from './pages/DiveCardEleven'
 
-import {diveState} from './pages/Recoil/atoms'
-
-
 const ElevenMain = () => {
-    const diveName = useRecoilValue(diveState)
+    //info  
+    const [info, setInfo] = useState({
+        name: '',
+        team: '',
+        coach: '',
+        meet: '',
+        date: '',
+    })
 
-  
+    const [dives, setDives] = useState({
+        d1: '',
+        d2: '',
+        d3: '',
+        d4: '',
+        d5: '',
+        d6: '',   
+        d7: '',
+        d8: '',
+        d9: '',
+        d10: '',
+        d11: '', 
+    })
+
+    
+  const [isOpt, setOpt] = useState({
+      o1: false,
+      o2: false,
+      o3: false,
+      o4: false,
+      o5: false,
+      o6: false,
+      o7: false,
+      o8: false,
+      o9: false,
+      o10: false,
+      o11: false,
+  })
+
+  const [entry, setEntry] = useState([])
+
+  const handleEntry = (e) => {
+    setEntry(e)
+}
 
     //pages
     const [curStep, setStep] = useState(1)
@@ -23,6 +59,26 @@ const ElevenMain = () => {
         setStep(curStep - 1)
     }
 
+    //on change
+    const handleInfoChange = (e) => {
+        setInfo({
+            ...info,
+            [e.target.id]: e.target.value
+        })
+    }
+    const handleOptChange = (e) => {
+        setOpt({
+            ...isOpt,
+            [e.target.id]: e.target.checked
+        })
+    }
+    const handleDiveChange = (e) => {
+        setDives({
+            ...dives,
+            [e.target.id]: e.target.value
+        })
+    }
+
     //page layout
     switch(curStep){
         case 1:
@@ -31,6 +87,8 @@ const ElevenMain = () => {
                 <h2 className='h2'>Eleven Dives</h2>
                     <DiverInfoEleven
                         next={next}
+                        onChange={handleInfoChange}
+                        info={info}
                     />
                 </>
             )
@@ -41,6 +99,11 @@ const ElevenMain = () => {
                     <EnterElevenDives                        
                         next={next}
                         back={back}
+                        dives={dives}
+                        onChange={handleDiveChange}
+                        onClick={handleOptChange}
+                        opt={isOpt}
+                        onSubmit={handleEntry}
                     />
                 </>
             )
@@ -51,10 +114,11 @@ const ElevenMain = () => {
                     <CheckListEleven
                         next={next}
                         back={back}
+                        entry={entry}
                     />
                 </>
             )
-        case 4:
+        default:
             return (
                 <>
                     <h2 className='h2'>Eleven Dives</h2>
@@ -62,29 +126,7 @@ const ElevenMain = () => {
                         back={back}
                     />
                 </>
-            )        
-        // default:
-        //     return (<>
-        //         <FirstRoundInput
-        //             dive={dive}
-        //             onChange={handleDive}
-        //             onSubmit={handleEntry}
-        //             changeOpt={handleOpt}
-        //         />
-        //         <SecondRoundInput
-        //             dive={dive}
-        //             onChange={handleDive}
-        //             onSubmit={handleEntry}
-        //             changeOpt={handleOpt}
-        //         />
-        //         <ThirdRoundInput
-        //             dive={dive}
-        //             onChange={handleDive}
-        //             onSubmit={handleEntry}
-        //             changeOpt={handleOpt}
-        //         />
-        //         </>
-        //     )
+            ) 
     }
 
 

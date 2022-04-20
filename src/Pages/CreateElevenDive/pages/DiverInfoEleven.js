@@ -2,9 +2,9 @@ import React from 'react'
 
 const DiverInfoEleven = ({info, onChange, next}) => {
   return (
-    <div className='eleven-container'>
+    <div className='page-container'>
         <h1 className='header'>Diver Info</h1>
-            <form className='eleven-form'>
+            <form className=''>
                 {/* Diver Name */}
                 <div className='input-div'>
                     <label htmlFor="name" className='form-label'>Diver's Name</label>

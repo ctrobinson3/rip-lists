@@ -40,7 +40,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 
 
     return (
-        <div className='six-container'>
+        <div className='page-container'>
             <h1 className='header'>Enter Dives</h1>
             {/* Rules modal */}
             <div className='modal-but-div'>

@@ -3,13 +3,8 @@ import Dives from './components/dives'
 
 
 const CheckListSix = ({ next, back, entry }) => {
-    // const allDives = [...new Set(entry.map())]
-    // const [display, setDisplay] = useState(allDives)
-
-
-
     return (
-        <div className='six-container'>
+        <div className='page-container'>
             <h1 className='header'>List Check</h1>
 
             <Dives
