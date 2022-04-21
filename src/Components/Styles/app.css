@@ -9,3 +9,7 @@
 body{
     background-color: var(--secondary);
 }
+
+.page-bottom-buffer{
+    padding-bottom: 100px;
+}

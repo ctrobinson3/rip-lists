@@ -16,6 +16,8 @@ function App() {
       </Routes>
       <Navbar/>
     </Router>
+    
+    <div className='page-bottom-buffer'/>
     </div>
   );
 }

@@ -51,7 +51,7 @@ const EnterElevenDives = ({dives, onChange, onClick, onSubmit, opt, next, back})
                 //returns an empty dive
                 return diveArray[113]
         })
-        //enter dives
+        //enter dives        
         onSubmit(diveList)
         next()
     }
@@ -63,7 +63,12 @@ const EnterElevenDives = ({dives, onChange, onClick, onSubmit, opt, next, back})
         new Round(d, i)
     }
     
-    const arr = []
+    const roundList = testArray.map((a, i) => {
+        const divesArray = [o1, o2, o3]        
+        return new Round(a, divesArray[i])
+    })
+    console.log(roundList)
+
 
 
   return (
