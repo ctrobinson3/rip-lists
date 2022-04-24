@@ -1,6 +1,6 @@
 import React from 'react';
-import '../../../../Components/Styles/modal.css';
-import DiveModalContent from '../../../../Components/DiveLists/DiveModalContent';
+import '../../Styles/modal.css';
+import DiveModalContent from './DiveModalContent';
 
 const DiveModal = ({ closeDiveModal }) => {
 	return (
