@@ -203,3 +203,7 @@ body.active-modal {
 .toggle__input:checked ~ .toggle__fill::after {
 	transform: translateX(var(--height));
 }
+
+.is-optional {
+	text-decoration-line: underline;
+}
