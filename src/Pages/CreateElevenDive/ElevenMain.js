@@ -117,7 +117,7 @@ const ElevenMain = () => {
 			return (
 				<>
 					<h2 className="h2">Eleven Dives</h2>
-					<DiveCardEleven back={back} />
+					<DiveCardEleven back={back} dive={entry} info={info} />
 				</>
 			);
 	}
