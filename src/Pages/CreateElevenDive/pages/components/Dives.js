@@ -2,8 +2,15 @@ import React from 'react';
 
 const Dives = ({ entry }) => {
 	//errors
-	var elevenDives = true;
-	var repeatDives = false;
+	var elevenDives = true; //11 valid dives
+	var repeatDives = false; //no repeated dives
+	var allCategoriesOpt = false; //5 categories in optionals
+	var allCategoriesVol = false; //5 categories in voluntaries
+	var firstEightCategories = false; //5 categories represented in first 8 dives
+	var noRepeatOpt = false; //first eight dives doesn't have two of the same optional category
+	var roundOneValid = false; //3opt, 2 vol
+	var roundTwovalid = false; //1 opt, 2 vol
+	var roundThreeValid = false; //2 opt, 1 vol
 	//deconstruction
 	//First Round
 	const d1 = entry[0];
@@ -49,8 +56,13 @@ const Dives = ({ entry }) => {
 		d11.optional,
 	];
 
+	//
+	// 	Dive Errors
+	//
+
+	//Dive display/elevenDives
 	const displayedDive = diveList.map((dive, i) => {
-		if (dive.num === 0) {
+		if (dive.num === ' ') {
 			elevenDives = false;
 			return (
 				<p className="dive-invalid" key={i}>
@@ -66,17 +78,7 @@ const Dives = ({ entry }) => {
 			);
 	});
 
-	const displayedOptional = optList.map((dive, i) => {
-		if (dive)
-			return (
-				<p className="is-optional" key={i}>
-					Optional
-				</p>
-			);
-		else return <p key={i + 100}>Voluntary</p>;
-	});
-
-	//errors
+	//repeated dives
 	function checkValidity(d, i) {
 		const list = diveList.map((dive) => {
 			return dive.num;
@@ -88,8 +90,58 @@ const Dives = ({ entry }) => {
 		} else return 'dive-valid';
 	}
 
-	//display errors
-	const checkSix = () => {
+	//round opt/vol
+	const optAmt = (rounds, roundStart) => {
+		var totalOpts = 0;
+		for (let i = 0; i < rounds; i++) {
+			totalOpts += optList[i + roundStart];
+		}
+		return totalOpts;
+	};
+
+	if (optAmt(5, 0) === 3) roundOneValid = true;
+	if (optAmt(3, 5) === 1) roundTwovalid = true;
+	if (optAmt(3, 8) === 2) roundThreeValid = true;
+
+	//checking appropriate number of categories
+	let optArray = []; // 5 categories in optionals
+	let volArray = []; // 5 categories in voluntaries
+	let semiCategories = []; // 5 categories in semifinals (both opt and vol)
+	let semiOptCategories = []; // no repeat category for optionals in semifinals
+
+	//the loooooop
+	const checkCategories = (limit, e, key) => {
+		for (let i = 0; i < limit; i++) {
+			let rnd = e[i];
+			let dive = rnd.dive;
+			let cat = dive.cat;
+			if (cat != ' ') {
+				if (key === 0) {
+					semiCategories.push(cat);
+					if (rnd.optional) {
+						semiOptCategories.push(cat);
+					}
+				} else if (key === 1) {
+					if (rnd.optional) {
+						optArray.push(cat);
+					} else if (!rnd.optional) {
+						volArray.push(cat);
+					}
+				}
+			}
+		}
+	};
+
+	checkCategories(8, entry, 0); //entry for opt/vol arrays
+	checkCategories(11, entry, 1); //entry for semifinals arrays
+	//checking for errors
+	if (new Set(optArray).size === 5) allCategoriesOpt = true;
+	if (new Set(volArray).size === 5) allCategoriesVol = true;
+	if (new Set(semiCategories).size === 5) firstEightCategories = true;
+	if (new Set(semiOptCategories).size === semiOptCategories.length)
+		noRepeatOpt = true;
+
+	const checkEleven = () => {
 		if (!elevenDives)
 			return (
 				<div className="dive-error">*Some dives were entered incorrectly</div>
@@ -104,7 +156,7 @@ const Dives = ({ entry }) => {
 	return (
 		<div>
 			<div className="dive-display__header">
-				{checkSix()} {repeatedDives()}
+				{checkEleven()} {repeatedDives()}
 			</div>
 			<h3>Entered Dives:</h3>
 			<div className="dive-display">

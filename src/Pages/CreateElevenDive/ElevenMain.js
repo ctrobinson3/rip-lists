@@ -45,6 +45,8 @@ const ElevenMain = () => {
 
 	const [entry, setEntry] = useState([]);
 
+	const [verify, setVerify] = useState(false);
+
 	const handleEntry = (e) => {
 		setEntry(e);
 	};
@@ -76,6 +78,9 @@ const ElevenMain = () => {
 			...dives,
 			[e.target.id]: e.target.value,
 		});
+	};
+	const onVerify = (e) => {
+		setVerify(e);
 	};
 
 	//page layout
@@ -110,14 +115,25 @@ const ElevenMain = () => {
 			return (
 				<>
 					<h2 className="h2">Eleven Dives</h2>
-					<CheckListEleven next={next} back={back} entry={entry} />
+					<CheckListEleven
+						next={next}
+						back={back}
+						entry={entry}
+						verify={verify}
+						setVerify={setVerify}
+					/>
 				</>
 			);
 		default:
 			return (
 				<>
 					<h2 className="h2">Eleven Dives</h2>
-					<DiveCardEleven back={back} dive={entry} info={info} />
+					<DiveCardEleven
+						back={back}
+						dive={entry}
+						info={info}
+						verify={verify}
+					/>
 				</>
 			);
 	}
