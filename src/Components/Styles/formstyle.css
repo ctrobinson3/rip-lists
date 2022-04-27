@@ -58,6 +58,13 @@
 	border-radius: 2rem;
 }
 
+.button-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
 .form-button:active {
 	background-color: var(--light);
 }
@@ -72,6 +79,7 @@
 	border-color: var(--primary);
 	font-size: 5mm;
 	padding: 0.5rem 3rem;
+	width: fit-content;
 }
 
 .header-p {
@@ -81,6 +89,14 @@
 	justify-content: center;
 	font-size: 17px;
 	font-weight: 500;
+}
+
+.submit-anyway {
+	border-color: red;
+	padding-top: 10px;
+	padding-bottom: 10px;
+	font-weight: 400;
+	width: fit-content;
 }
 
 /* DiverInfoSix */

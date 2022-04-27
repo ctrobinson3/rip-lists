@@ -1,6 +1,6 @@
 import React from 'react';
 
-const dives = ({ entry }) => {
+const dives = ({ entry, verify }) => {
 	var repeatDives = false;
 	var enoughCategories = false;
 	var sixDives = true;
@@ -16,7 +16,7 @@ const dives = ({ entry }) => {
 
 	//find dives in dive array and display info
 	const displayedDive = diveList.map((dive, i) => {
-		if (dive.num === 0) {
+		if (dive.num === ' ') {
 			sixDives = false;
 			return (
 				<p className="dive-invalid" key={i}>
@@ -70,8 +70,10 @@ const dives = ({ entry }) => {
 
 	//if no errors:
 	const allGood = () => {
-		if (!repeatDives && enoughCategories && sixDives)
+		if (!repeatDives && enoughCategories && sixDives) {
+			verify(true);
 			return <div className="dive-correct">All good!</div>;
+		} else verify(false);
 	};
 
 	return (

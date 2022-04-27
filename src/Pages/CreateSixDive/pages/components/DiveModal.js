@@ -8,7 +8,7 @@ const DiveModal = ({ closeDiveModal }) => {
 			<div className="modal-container">
 				<div className="modal-content">
 					<button className="modal-close" onClick={() => closeDiveModal(false)}>
-						close
+						Close
 					</button>
 					<DiveModalContent />
 				</div>

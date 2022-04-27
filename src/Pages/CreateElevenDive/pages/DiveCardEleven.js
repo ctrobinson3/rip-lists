@@ -70,18 +70,26 @@ const DiveCardEleven = ({ back, dive, info }) => {
 	const optionals = dive.map((d) => {
 		if (d.optional) {
 			const a = d.dive;
-			return a.difficulty;
+			return parseFloat(a.difficulty);
 		} else return 0;
 	});
-	console.log(optionals);
+	let op = 0;
+	for (let i = 0; i < optionals.length; i++) {
+		op += optionals[i];
+	}
+	let optDD = op.toFixed(1);
 	//vol
 	const voluntaries = dive.map((d) => {
 		if (!d.optional) {
 			const a = d.dive;
-			return a.difficulty;
+			return parseFloat(a.difficulty);
 		} else return 0;
 	});
-	console.log(voluntaries);
+	let vo = 0;
+	for (let i = 0; i < voluntaries.length; i++) {
+		vo += voluntaries[i];
+	}
+	let volDD = vo.toFixed(1);
 
 	//Download PDF
 	const [docName, setDocName] = useState('');
@@ -164,9 +172,9 @@ const DiveCardEleven = ({ back, dive, info }) => {
 		doc.text(position[10], 109, 158.5);
 		doc.text(d11.difficulty, 125, 158.5);
 		//Vol dd
-		doc.text('9.0', 87, 170);
+		doc.text(volDD, 87, 170);
 		//opt dd
-		doc.text('15.5', 109, 170);
+		doc.text(optDD, 109, 170);
 
 		//Opt Circles
 		if (!o1) {

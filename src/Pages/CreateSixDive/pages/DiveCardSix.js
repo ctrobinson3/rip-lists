@@ -1,15 +1,14 @@
 import { useState } from 'react';
 import jsPDF from 'jspdf';
-import DiveCardLandscape from './img/DiveCardLandscape.png';
+import DiveCardLandscape from './img/DiveCard6.png';
 
-const DiveCardSix = ({ back, dive, info }) => {
+const DiveCardSix = ({ back, dive, info, verify }) => {
 	//Set Data
 	const name = info.name;
 	const team = info.team;
 	const coach = info.coach;
 	const meet = info.meet;
 	const date = info.date;
-
 	//Dives
 	const d1 = dive[0];
 	const d2 = dive[1];
@@ -17,17 +16,6 @@ const DiveCardSix = ({ back, dive, info }) => {
 	const d4 = dive[3];
 	const d5 = dive[4];
 	const d6 = dive[5];
-	const printInfo = (d) => {
-		if (d === 'invalid dive')
-			return <div className="invalid-text"> (empty) </div>;
-		else
-			return (
-				<div>
-					{' '}
-					{d.direction} {d.rotation} {d.position} DD: {d.difficulty}
-				</div>
-			);
-	};
 
 	//Position
 	const pos = [d1, d2, d3, d4, d5, d6];
@@ -56,7 +44,10 @@ const DiveCardSix = ({ back, dive, info }) => {
 	function financial(x) {
 		return x.toFixed(1);
 	}
-	const finalDD = financial(optdifficulty);
+	const finalDD = (d) => {
+		if (d > 0) return financial(d);
+		else return '';
+	};
 	var volDifficulty = '';
 	const dv = parseFloat(d1.difficulty);
 	if (dv > 1.8) volDifficulty = 1.8;
@@ -79,47 +70,49 @@ const DiveCardSix = ({ back, dive, info }) => {
 		//info
 		doc.setFont('Courier');
 		doc.setFontSize(10);
-		doc.text(name, 29, 16);
-		doc.text(team, 33, 20.5);
-		doc.text(coach, 30.6, 24.8);
+		doc.text(name, 38, 16);
+		doc.text(team, 42.5, 20.5);
+		doc.text(coach, 40.1, 24.8);
 		doc.text(meet, 163, 16);
 		doc.text(date, 163, 20.5);
 		doc.text('1-Meter, 6 Dive', 165.5, 25);
 		//dives
 		//dive one
-		doc.text(d1.num + divePos[0], 26, 67);
-		doc.text(d1.direction + ' ' + d1.rotation, 41, 67);
-		doc.text(position[0], 99, 67);
-		doc.text('' + volDifficulty, 115, 67);
+		doc.text(d1.num + divePos[0], 36, 64);
+		doc.text(d1.direction + ' ' + d1.rotation, 51, 64);
+		doc.text(position[0], 109, 64);
+		doc.text('' + volDifficulty, 125, 64);
 		//dive two
-		doc.text(d2.num + divePos[1], 26, 77);
-		doc.text(d2.direction + ' ' + d2.rotation, 41, 77);
-		doc.text(position[1], 99, 77);
-		doc.text(d2.difficulty, 115, 77);
+		doc.text(d2.num + divePos[1], 36, 74);
+		doc.text(d2.direction + ' ' + d2.rotation, 51, 74);
+		doc.text(position[1], 109, 74);
+		doc.text(d2.difficulty, 125, 74);
 		//dive three
-		doc.text(d3.num + divePos[2], 26, 86.5);
-		doc.text(d3.direction + ' ' + d3.rotation, 41, 86.5);
-		doc.text(position[2], 99, 86.5);
-		doc.text(d3.difficulty, 115, 86.5);
+		doc.text(d3.num + divePos[2], 36, 83.5);
+		doc.text(d3.direction + ' ' + d3.rotation, 51, 83.5);
+		doc.text(position[2], 109, 83.5);
+		doc.text(d3.difficulty, 125, 83.5);
 		//dive four
-		doc.text(d4.num + divePos[3], 26, 96);
-		doc.text(d4.direction + ' ' + d4.rotation, 41, 96);
-		doc.text(position[3], 99, 96);
-		doc.text(d4.difficulty, 115, 96);
+		doc.text(d4.num + divePos[3], 36, 93);
+		doc.text(d4.direction + ' ' + d4.rotation, 51, 93);
+		doc.text(position[3], 109, 93);
+		doc.text(d4.difficulty, 125, 93);
 		//dive five
-		doc.text(d5.num + divePos[4], 26, 106);
-		doc.text(d5.direction + ' ' + d5.rotation, 41, 106);
-		doc.text(position[4], 99, 106);
-		doc.text(d5.difficulty, 115, 106);
+		doc.text(d5.num + divePos[4], 36, 103);
+		doc.text(d5.direction + ' ' + d5.rotation, 51, 103);
+		doc.text(position[4], 109, 103);
+		doc.text(d5.difficulty, 125, 103);
 		//dive six
-		doc.text(d6.num + divePos[5], 26, 116);
-		doc.text(d6.direction + ' ' + d6.rotation, 41, 116);
-		doc.text(position[5], 99, 116);
-		doc.text(d6.difficulty, 115, 116);
+		doc.text(d6.num + divePos[5], 36, 113);
+		doc.text(d6.direction + ' ' + d6.rotation, 51, 113);
+		doc.text(position[5], 109, 113);
+		doc.text(d6.difficulty, 125, 113);
 		//Vol dd
-		doc.text('' + volDifficulty, 87, 132.7);
+		doc.text('' + volDifficulty, 87, 133.1);
 		//Opt dd
-		doc.text('' + finalDD, 109, 132.7);
+		doc.text('' + finalDD(optdifficulty), 109, 133.1);
+		//verified list
+		if (verify) doc.text('Verified', 108.2, 42);
 
 		doc.save(docName);
 	}
