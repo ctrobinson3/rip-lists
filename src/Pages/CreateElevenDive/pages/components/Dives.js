@@ -141,39 +141,114 @@ const Dives = ({ entry }) => {
 	if (new Set(semiOptCategories).size === semiOptCategories.length)
 		noRepeatOpt = true;
 
+	//error messages
 	const checkEleven = () => {
 		if (!elevenDives)
 			return (
-				<div className="dive-error">*Some dives were entered incorrectly</div>
+				<div className="dive-error ">*Some dives were entered incorrectly</div>
+			);
+	};
+	const repeatedDives = () => {
+		if (repeatDives)
+			return <div className="dive-error ">*Dives are repeated</div>;
+	};
+	const firstRoundErrorMessage = () => {
+		if (!roundOneValid)
+			return <div className="dive-error ">3 optionals needed</div>;
+	};
+	const secondRoundErrorMessage = () => {
+		if (!roundTwovalid)
+			return <div className="dive-error ">1 optional needed</div>;
+	};
+	const thirdRoundErrorMessage = () => {
+		if (!roundThreeValid)
+			return <div className="dive-error ">2 optionals needed</div>;
+	};
+	const catErrorOpt = () => {
+		if (!allCategoriesOpt)
+			return (
+				<div className="dive-error ">
+					*All 5 categories are not represented in your optionals
+				</div>
+			);
+	};
+	const catErrorVol = () => {
+		if (!allCategoriesVol)
+			return (
+				<div className="dive-error ">
+					*All 5 categories are not represented in your voluntaries
+				</div>
+			);
+	};
+	const firstEightError = () => {
+		if (!firstEightCategories)
+			return (
+				<div className="dive-error ">
+					*All 5 categories are not represented in the first 8 dives (voluntary
+					or optional)
+				</div>
+			);
+	};
+	const repeatOptError = () => {
+		if (!noRepeatOpt)
+			return (
+				<div className="dive-error ">
+					*2 optionals of the same category cannot be represented in the first 8
+					dives
+				</div>
 			);
 	};
 
-	const repeatedDives = () => {
-		if (repeatDives)
-			return <div className="dive-error">*Dives are repeated</div>;
+	//circle voluntaries
+	const volCheck = (i) => {
+		const d = entry[i];
+		if (!d.optional) {
+			return 'voluntary-div';
+		} else return 'optional-div';
 	};
 
 	return (
-		<div>
-			<div className="dive-display__header">
-				{checkEleven()} {repeatedDives()}
+		<div className="page-container">
+			<div className="header-error">
+				{checkEleven()}
+				{repeatedDives()}
+				{catErrorOpt()}
+				{catErrorVol()}
+				{firstEightError()}
+				{repeatOptError()}
 			</div>
 			<h3>Entered Dives:</h3>
-			<div className="dive-display">
-				<h4>First Round</h4>
-				{displayedDive[0]}
-				{displayedDive[1]}
-				{displayedDive[2]}
-				{displayedDive[3]}
-				{displayedDive[4]}
-				<h4>Second Round</h4>
-				{displayedDive[5]}
-				{displayedDive[6]}
-				{displayedDive[7]}
-				<h4>Third Round</h4>
-				{displayedDive[8]}
-				{displayedDive[9]}
-				{displayedDive[10]}
+			<p>Voluntaries are circled</p>
+			<div className="page-container">
+				<div className="round-container">
+					<h4 className="round-head">First Round</h4>
+					{firstRoundErrorMessage()}
+					<div className="dive-div">
+						<div className={volCheck(0)}>{displayedDive[0]}</div>
+						<div className={volCheck(1)}>{displayedDive[1]}</div>
+						<div className={volCheck(2)}>{displayedDive[2]}</div>
+						<div className={volCheck(3)}>{displayedDive[3]}</div>
+						<div className={volCheck(4)}>{displayedDive[4]}</div>
+					</div>
+				</div>
+				<div className="round-container">
+					<h4 className="round-head">Second Round</h4>
+					{secondRoundErrorMessage()}
+					<div className="dive-div">
+						<div className={volCheck(5)}>{displayedDive[5]}</div>
+						<div className={volCheck(6)}>{displayedDive[6]}</div>
+						<div className={volCheck(7)}>{displayedDive[7]}</div>
+					</div>
+				</div>
+				<div className="round-container">
+					<h4 className="round-head">Third Round</h4>
+					{thirdRoundErrorMessage()}
+					<div className="dive-div">
+						<div className={volCheck(8)}>{displayedDive[8]}</div>
+						<div className={volCheck(9)}>{displayedDive[9]}</div>
+						<div className={volCheck(10)}>{displayedDive[10]}</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	);

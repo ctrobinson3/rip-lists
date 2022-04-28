@@ -118,8 +118,13 @@ body.active-modal {
 	overflow-y: hidden;
 }
 
-.dive-valid {
-	color: black;
+.dive-valid,
+.dive-invalid {
+	background-color: var(--secondary);
+	width: 80%;
+	padding: 4px;
+	margin: 6px;
+	border-radius: 0.5rem;
 }
 
 .dive-invalid {
@@ -135,6 +140,7 @@ body.active-modal {
 }
 .dive-error {
 	color: red;
+	padding: 10px;
 }
 
 .dive-correct {
@@ -222,4 +228,41 @@ body.active-modal {
 
 .is-optional {
 	text-decoration-line: underline;
+}
+
+.header-error {
+	padding: 10px;
+}
+
+.round-container {
+	border: 5px solid white;
+	width: 400px;
+	border-radius: 2rem;
+	margin: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.round-head {
+	display: flex;
+	justify-content: center;
+}
+
+.dive-div {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	padding-bottom: 10px;
+}
+
+.optional-div,
+.voluntary-div {
+	width: 90%;
+	border-radius: 1rem;
+}
+
+.voluntary-div {
+	border: 3px solid var(--dark);
 }
