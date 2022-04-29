@@ -31,6 +31,8 @@
 	padding: 14px 28px;
 	border-radius: 10px;
 	width: 80%;
+	max-width: 600px;
+	max-height: 800px;
 }
 
 .modal-close {
@@ -44,4 +46,9 @@
 	background-color: white;
 	border: 3px solid var(--primary);
 	border-radius: 2rem;
+}
+
+.dm-display {
+	display: flex;
+	flex-direction: row;
 }

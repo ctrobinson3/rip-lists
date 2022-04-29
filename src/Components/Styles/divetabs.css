@@ -1,16 +1,17 @@
 .dives-bloc {
 	display: flex;
 	flex-direction: row;
-
-	margin-top: 50px;
+	margin-top: 45px;
 }
 
 .dives-tabs {
-	padding: 14px;
+	padding: 8px;
 	text-align: center;
 	font-size: 14px;
-	width: 50px;
-	background: rgba(128, 128, 128, 0.075);
+	/* width: 50px; */
+	width: 15.5%;
+	background-color: var(--primary);
+	color: white;
 	cursor: pointer;
 	border-bottom: 1px solid rgba(0, 0, 0, 0.274);
 	box-sizing: content-box;
@@ -24,6 +25,7 @@
 .active-tabs {
 	background: white;
 	border-bottom: 1px solid transparent;
+	color: black;
 }
 
 .active-tabs::before {
@@ -35,7 +37,7 @@
 	transform: translateX(-50%);
 	width: calc(100% + 2px);
 	height: 5px;
-	background: rgb(88, 147, 241);
+	background: var(--secondary);
 }
 
 .dives-content-tabs {
@@ -43,12 +45,41 @@
 }
 .dives-content {
 	background: white;
-	padding: 40px;
+	padding: 35px;
 	width: 80%;
 	height: 100%;
 	display: none;
+	overflow: scroll;
 }
 
 .active-content {
 	display: block;
+	max-height: 600px;
+}
+
+.dives-container {
+	margin-left: -15px;
+}
+
+.dm-num {
+	margin-top: -10px;
+	margin-left: 10px;
+	text-decoration-line: underline;
+}
+
+.dive {
+	font-size: 20px;
+	font-weight: 800;
+}
+
+.dm-difficutly {
+	margin: 10px 30px;
+}
+
+.dm-display {
+	border: 3px solid var(--primary);
+	border-radius: 2rem;
+	padding: 10px;
+	margin: 5px 0px;
+	max-height: 600px;
 }

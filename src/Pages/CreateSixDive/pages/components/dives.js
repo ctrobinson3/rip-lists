@@ -76,6 +76,25 @@ const dives = ({ entry, verify }) => {
 		} else verify(false);
 	};
 
+	//dd
+
+	var dd = (d) => {
+		let total = 0;
+		for (let i = 1; i < d.length; i++) {
+			let dive = d[i];
+			let diff = dive.difficulty;
+			let difficulty = parseFloat(diff);
+			total += difficulty;
+		}
+		if (total > 0) {
+			return (
+				<div className="dive-display" style={{ fontWeight: 800 }}>
+					DD: {total}
+				</div>
+			);
+		}
+	};
+
 	return (
 		<>
 			<div className="dive-display__header">
@@ -86,6 +105,7 @@ const dives = ({ entry, verify }) => {
 			</div>
 			<h3>Entered Dives:</h3>
 			<div className="dive-display">{displayedDive}</div>
+			{dd(diveList)}
 		</>
 	);
 };

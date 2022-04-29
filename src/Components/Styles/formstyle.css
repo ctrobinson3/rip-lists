@@ -120,10 +120,9 @@ body.active-modal {
 
 .dive-valid,
 .dive-invalid {
-	background-color: var(--secondary);
-	width: 80%;
+	width: 100%;
 	padding: 4px;
-	margin: 6px;
+	margin: 4px;
 	border-radius: 0.5rem;
 }
 
@@ -236,9 +235,11 @@ body.active-modal {
 
 .round-container {
 	border: 5px solid white;
-	width: 400px;
+	width: 100%;
+	min-width: 300px;
+	max-width: 400px;
 	border-radius: 2rem;
-	margin: 20px;
+	margin: 10px;
 	display: flex;
 	flex-direction: column;
 	justify-content: center;

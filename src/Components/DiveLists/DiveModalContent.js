@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import '../Styles/divetabs.css';
+import Fronts from './DiveModalContent/Fronts';
+import Backs from './DiveModalContent/Backs';
+import Reverses from './DiveModalContent/Reverses';
+import Inwards from './DiveModalContent/Inwards';
+import Twists from './DiveModalContent/Twists';
 
 const DiveModalContent = () => {
 	const [toggleState, setToggleState] = useState(1);
@@ -59,35 +64,35 @@ const DiveModalContent = () => {
 						toggleState === 1 ? 'dives-content active-content' : 'dives-content'
 					}
 				>
-					front
+					<Fronts />
 				</div>
 				<div
 					className={
 						toggleState === 2 ? 'dives-content active-content' : 'dives-content'
 					}
 				>
-					back
+					<Backs />
 				</div>
 				<div
 					className={
 						toggleState === 3 ? 'dives-content active-content' : 'dives-content'
 					}
 				>
-					reverse
+					<Reverses />
 				</div>
 				<div
 					className={
 						toggleState === 4 ? 'dives-content active-content' : 'dives-content'
 					}
 				>
-					inward
+					<Inwards />
 				</div>
 				<div
 					className={
 						toggleState === 5 ? 'dives-content active-content' : 'dives-content'
 					}
 				>
-					twist
+					<Twists />
 				</div>
 			</div>
 		</div>
