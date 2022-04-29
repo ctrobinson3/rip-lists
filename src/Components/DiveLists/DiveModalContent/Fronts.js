@@ -6,6 +6,7 @@ const diveArray = diveArrayFunction();
 
 //get fronts
 const frontArray = [];
+const frontFlyingArray = [];
 for (let i = 0; i < diveArray.length; i++) {
 	let a = diveArray[i];
 	if (a.cat === 1 && a.direction === 'Forward') {
@@ -66,6 +67,7 @@ const Fronts = () => {
 				<h1 className="dm-h1">Fronts</h1>
 			</header>
 			<div>{display}</div>
+			<h3 className="dm-h3">Flying</h3>
 		</div>
 	);
 };

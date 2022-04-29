@@ -47,18 +47,31 @@
 	background: white;
 	padding: 35px;
 	width: 80%;
-	height: 100%;
+	height: 630px;
+	min-height: 200px;
 	display: none;
-	overflow: scroll;
+	overflow-y: scroll;
 }
 
 .active-content {
 	display: block;
-	max-height: 600px;
+	max-height: 630px;
+
+	min-height: 200px;
 }
 
 .dives-container {
 	margin-left: -15px;
+}
+.dm-dif-div {
+	background-color: var(--light);
+	border-radius: 2rem;
+	margin-left: 50px;
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: right;
+	align-items: right;
 }
 
 .dm-num {
@@ -68,7 +81,7 @@
 }
 
 .dive {
-	font-size: 20px;
+	font-size: 17px;
 	font-weight: 800;
 }
 
@@ -82,4 +95,14 @@
 	padding: 10px;
 	margin: 5px 0px;
 	max-height: 600px;
+}
+
+.dm-h3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.twist {
+	background-color: red;
 }
