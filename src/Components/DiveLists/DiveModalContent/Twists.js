@@ -9,21 +9,16 @@ const frontTwistArray = [];
 const backTwistArray = [];
 const reverseTwistArray = [];
 const inwardTwistArray = [];
-const allTwistArray = [];
 for (let i = 0; i < diveArray.length; i++) {
 	let a = diveArray[i];
 	if (a.cat === 5 && a.direction === 'Forward') {
 		frontTwistArray.push(a);
-		allTwistArray.push(a);
 	} else if (a.cat === 5 && a.direction === 'Back') {
 		backTwistArray.push(a);
-		allTwistArray.push(a);
 	} else if (a.cat === 5 && a.direction === 'Reverse') {
 		inwardTwistArray.push(a);
-		allTwistArray.push(a);
 	} else if (a.cat === 5 && a.direction === 'Inward') {
 		reverseTwistArray.push(a);
-		allTwistArray.push(a);
 	}
 }
 
@@ -97,8 +92,8 @@ const display = (u, arr) => {
 
 	let diveDisplay = twistDirection.map((d, i) => {
 		return (
-			<div className="dm-display">
-				<div className="dm-dive-head" key={i}>
+			<div className="dm-display" key={i}>
+				<div className="dm-dive-head">
 					<p className="dm-difficulty dive">{d}</p>
 					<p className="dm-num">{diveNumber(d)}</p>
 				</div>
@@ -113,7 +108,6 @@ const display = (u, arr) => {
 	});
 	return <div>{diveDisplay}</div>;
 };
-console.log(backTwistArray.length);
 const Twists = () => {
 	return (
 		<div>

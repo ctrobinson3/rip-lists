@@ -1,19 +1,47 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Dives from './components/Dives';
+import OverVolDD from './components/OverVolDD';
 
-const CheckListEleven = ({ next, back, entry }) => {
+const CheckListEleven = ({
+	next,
+	back,
+	entry,
+	verify,
+	onVerify,
+	handleUnderNine,
+}) => {
 	return (
 		<div className="page-container">
 			<h1 className="header">List Check</h1>
-
-			<Dives entry={entry} />
-
-			<button type="button" className="form-button next" onClick={next}>
-				Submit
-			</button>
-			<button type="button" className="form-button back" onClick={back}>
-				Back
-			</button>
+			<Dives
+				entry={entry}
+				onVerify={onVerify}
+				handleUnderNine={handleUnderNine}
+			/>
+			{verify && (
+				<div className="button-container">
+					<button type="button" className="form-button next" onClick={next}>
+						Submit
+					</button>
+					<button type="button" className="form-button back" onClick={back}>
+						Back
+					</button>
+				</div>
+			)}
+			{!verify && (
+				<div className="button-container">
+					<button type="button" className="form-button next" onClick={back}>
+						Back
+					</button>
+					<button
+						type="button"
+						className="form-button submit-anyway"
+						onClick={next}
+					>
+						Submit Anyway
+					</button>
+				</div>
+			)}
 		</div>
 	);
 };

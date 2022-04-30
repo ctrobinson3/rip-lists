@@ -5,59 +5,72 @@ import '../../Styles/divetabs.css';
 const diveArray = diveArrayFunction();
 
 //get fronts
-const inwardArray = [];
+let inwardArray = [];
+let flyingInwardArray = [];
 for (let i = 0; i < diveArray.length; i++) {
 	let a = diveArray[i];
 	if (a.cat === 4 && a.direction === 'Inward') {
 		inwardArray.push(a);
+	} else if (a.cat === 4 && a.direction === 'Inward Flying') {
+		flyingInwardArray.push(a);
 	}
 }
 
-//difficulty
-const displayDifficulty = (dive, l) => {
-	for (let i = 0; i < inwardArray.length; i++) {
-		let a = inwardArray[i];
-		let b = a.rotation;
-		let c = a.letter;
-		if (b === dive && c === l) {
-			return a.difficulty;
-		}
-	}
-};
-
-//show dive number
-const diveNumber = (dive) => {
-	for (let i = 0; i < inwardArray.length; i++) {
-		let a = inwardArray[i];
-		let b = a.rotation;
-		if (dive === b) {
-			return a.num;
-		}
-	}
-};
-
-const uniqueArray = Array.from(
-	new Set(
-		inwardArray.map((d) => {
-			return d.rotation;
-		})
-	)
-);
-const display = uniqueArray.map((d, i) => {
-	return (
-		<div className="dm-display" key={i}>
-			<div className="dm-dive-head">
-				<p className="dm-difficulty dive">{d}</p>
-				<p className="dm-num">{diveNumber(d)}</p>
-			</div>
-			<div className="dm-dif-div">
-				<p className="dm-difficutly">A: {displayDifficulty(d, 'a')}</p>
-				<p className="dm-difficutly">B: {displayDifficulty(d, 'b')}</p>
-				<p className="dm-difficutly">C: {displayDifficulty(d, 'c')} </p>
-			</div>
-		</div>
+//
+//set up unique array
+//
+const setArray = (arr) =>
+	Array.from(
+		new Set(
+			arr.map((d) => {
+				return d.rotation;
+			})
+		)
 	);
-});
+
+const uniqueArray = [setArray(inwardArray), setArray(flyingInwardArray)];
+
+const display = (u, arr) => {
+	let array = uniqueArray[u];
+	const diveNumber = (dive) => {
+		for (let i = 0; i < arr.length; i++) {
+			let a = arr[i];
+			let b = a.rotation;
+			if (dive === b) {
+				return a.num;
+			}
+		}
+	};
+
+	const displayDifficulty = (dive, l) => {
+		for (let i = 0; i < arr.length; i++) {
+			let a = arr[i];
+			let b = a.rotation;
+			let c = a.letter;
+			if (b === dive && c === l) {
+				return a.difficulty;
+			}
+		}
+	};
+
+	let diveDisplay = array.map((d, i) => {
+		return (
+			<div key={i} className="dm-display">
+				<div className="dm-dive-head">
+					<p className="dm-difficulty dive">{d}</p>
+					<p className="dm-num">{diveNumber(d)}</p>
+				</div>
+				<div className="dm-dif-div">
+					<p className="dm-difficutly ">A: {displayDifficulty(d, 'a')}</p>
+					<p className="dm-difficutly ">B: {displayDifficulty(d, 'b')}</p>
+					<p className="dm-difficutly">C: {displayDifficulty(d, 'c')}</p>
+					<p className="dm-difficutly">D: {displayDifficulty(d, 'd')}</p>
+				</div>
+			</div>
+		);
+	});
+	return <div>{diveDisplay}</div>;
+};
 
 const Inwards = () => {
 	return (
@@ -65,7 +78,9 @@ const Inwards = () => {
 			<header>
 				<h1 className="dm-h1">Inwards</h1>
 			</header>
-			<div>{display}</div>
+			<div>{display(0, inwardArray)}</div>
+			<h3 className="dm-h3">Flying</h3>
+			<div>{display(1, flyingInwardArray)}</div>
 		</div>
 	);
 };

@@ -28,7 +28,7 @@ const SixMain = () => {
 	//Entries
 	const [entry, setEntry] = useState([]);
 	//Verified List
-	const [verify, setVerify] = useState([false]);
+	const [verify, setVerify] = useState([true]);
 
 	//onChange
 	//set info

@@ -45,10 +45,16 @@ const ElevenMain = () => {
 
 	const [entry, setEntry] = useState([]);
 
-	const [verify, setVerify] = useState(false);
+	const [verify, setVerify] = useState(true);
+
+	const [underNine, setUnderNine] = useState(true);
 
 	const handleEntry = (e) => {
 		setEntry(e);
+	};
+
+	const handleUnderNine = (e) => {
+		setUnderNine(e);
 	};
 
 	//pages
@@ -120,7 +126,8 @@ const ElevenMain = () => {
 						back={back}
 						entry={entry}
 						verify={verify}
-						setVerify={setVerify}
+						onVerify={onVerify}
+						handleUnderNine={handleUnderNine}
 					/>
 				</>
 			);
@@ -133,6 +140,7 @@ const ElevenMain = () => {
 						dive={entry}
 						info={info}
 						verify={verify}
+						underNine={underNine}
 					/>
 				</>
 			);

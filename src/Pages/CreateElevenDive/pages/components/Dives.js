@@ -1,6 +1,14 @@
-import React from 'react';
+import React, { useState } from 'react';
+import OverVolDD from './OverVolDD';
 
-const Dives = ({ entry }) => {
+const Dives = ({ entry, onVerify, handleUnderNine }) => {
+	//modal
+	const [openOverVolDDModal, setOpenOverVolDDModal] = useState(false);
+	if (openOverVolDDModal) {
+		document.body.classList.add('active-modal');
+	} else {
+		document.body.classList.remove('active-modal');
+	}
 	//errors
 	var elevenDives = true; //11 valid dives
 	var repeatDives = false; //no repeated dives
@@ -11,6 +19,7 @@ const Dives = ({ entry }) => {
 	var roundOneValid = false; //3opt, 2 vol
 	var roundTwovalid = false; //1 opt, 2 vol
 	var roundThreeValid = false; //2 opt, 1 vol
+	var volOverNine = false; //checks if the DD of voluntaries is over 9.0
 	//deconstruction
 	//First Round
 	const d1 = entry[0];
@@ -132,6 +141,79 @@ const Dives = ({ entry }) => {
 		}
 	};
 
+	let ddDisplay = (d) => {
+		let volTotal = 0;
+		let optTotal = 0;
+		for (let i = 0; i < d.length; i++) {
+			let round = d[i];
+			let dive = round.dive;
+			let diff = dive.difficulty;
+			let difficulty = parseFloat(diff);
+			if (round.optional) {
+				optTotal += difficulty;
+			} else if (!round.optional) {
+				volTotal += difficulty;
+				if (volTotal > 9) {
+					volOverNine = true;
+				}
+			}
+		}
+		// const volButton = () => {
+		// 	if (volTotal > 9) {
+		// 		volOverNine = true;
+		// 		return (
+		// 			<button
+		// 				className="form-button change-dd"
+		// 				onClick={() => {
+		// 					setOpenOverVolDDModal(true);
+		// 				}}
+		// 			>
+		// 				Change DDs
+		// 			</button>
+		// 		);
+		// 	}
+		// };
+		if (optTotal > 0 && volTotal > 0) {
+			return (
+				<div className="dive-display" style={{ fontWeight: 800 }}>
+					<p>Opt DD: {optTotal}</p>
+					<p>Vol DD: {volTotal}</p>
+					{/* {volButton()} */}
+				</div>
+			);
+		} else if (volTotal > 0)
+			return (
+				<div className="dive-display" style={{ fontWeight: 800 }}>
+					<p>Vol DD: {volTotal}</p>
+				</div>
+			);
+		else if (optTotal > 0)
+			return (
+				<div className="dive-display" style={{ fontWeight: 800 }}>
+					<p>Opt DD: {optTotal}</p>
+				</div>
+			);
+	};
+	let ddCheck = () => {
+		let volTotal = 0;
+		for (let i = 0; i < entry.length; i++) {
+			let round = entry[i];
+			let dive = round.dive;
+			let diff = dive.difficulty;
+			let difficulty = parseFloat(diff);
+			if (!round.optional) {
+				volTotal += difficulty;
+			}
+		}
+		if (volTotal > 9) {
+			volOverNine = true;
+			handleUnderNine(false);
+		} else {
+			volOverNine = false;
+			handleUnderNine(true);
+		}
+	};
+	ddCheck();
 	checkCategories(8, entry, 0); //entry for opt/vol arrays
 	checkCategories(11, entry, 1); //entry for semifinals arrays
 	//checking for errors
@@ -198,7 +280,34 @@ const Dives = ({ entry }) => {
 				</div>
 			);
 	};
+	const volOverNineError = () => {
+		if (volOverNine)
+			return (
+				<div className="dive-error">
+					Voluntaries are over 9.0 DD. You will still be able to submit your
+					dive card, but the voluntary DDs will have to be filled in manually.
+				</div>
+			);
+	};
 
+	//No errors
+	const allGood = () => {
+		if (
+			elevenDives &&
+			!repeatDives &&
+			allCategoriesOpt &&
+			allCategoriesVol &&
+			firstEightCategories &&
+			noRepeatOpt &&
+			roundOneValid &&
+			roundTwovalid &&
+			roundThreeValid &&
+			!volOverNine
+		) {
+			onVerify(true);
+			return <div className="dive-correct">All Good!</div>;
+		} else onVerify(false);
+	};
 	//circle voluntaries
 	const volCheck = (i) => {
 		const d = entry[i];
@@ -209,6 +318,7 @@ const Dives = ({ entry }) => {
 
 	return (
 		<div className="page-container">
+			{openOverVolDDModal && <OverVolDD closeModal={setOpenOverVolDDModal} />}
 			<div className="header-error">
 				{checkEleven()}
 				{repeatedDives()}
@@ -216,6 +326,7 @@ const Dives = ({ entry }) => {
 				{catErrorVol()}
 				{firstEightError()}
 				{repeatOptError()}
+				{allGood()}
 			</div>
 			<h3>Entered Dives:</h3>
 			<p>Voluntaries are circled</p>
@@ -250,6 +361,8 @@ const Dives = ({ entry }) => {
 					</div>
 				</div>
 			</div>
+			{volOverNineError()}
+			{ddDisplay(entry)}
 		</div>
 	);
 };

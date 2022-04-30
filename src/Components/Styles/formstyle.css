@@ -187,10 +187,13 @@ body.active-modal {
 	display: flex;
 	cursor: pointer;
 	justify-content: center;
+	z-index: 0;
 }
 
 .toggle__input {
 	display: none;
+
+	z-index: 0;
 }
 
 .toggle__fill {
@@ -266,4 +269,9 @@ body.active-modal {
 
 .voluntary-div {
 	border: 3px solid var(--dark);
+}
+
+.change-dd {
+	border-color: red;
+	padding: 10px;
 }

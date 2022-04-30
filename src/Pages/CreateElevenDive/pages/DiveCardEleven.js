@@ -2,7 +2,7 @@ import { useState } from 'react';
 import jsPDF from 'jspdf';
 import ElevenDiveCard from './img/DiveCard11.png';
 
-const DiveCardEleven = ({ back, dive, info }) => {
+const DiveCardEleven = ({ back, dive, info, verify, underNine }) => {
 	//Data Deconstruction
 	const name = info.name;
 	const team = info.team;
@@ -21,7 +21,6 @@ const DiveCardEleven = ({ back, dive, info }) => {
 	const r9 = dive[8];
 	const r10 = dive[9];
 	const r11 = dive[10];
-	const rnds = [r1, r2, r3, r4, r5, r6, r7, r8, r9, r10, r11];
 
 	const d1 = r1.dive;
 	const d2 = r2.dive;
@@ -47,7 +46,6 @@ const DiveCardEleven = ({ back, dive, info }) => {
 	const o9 = r9.optional;
 	const o10 = r10.optional;
 	const o11 = r11.optional;
-	const opts = [o1, o2, o3, o4, o5, o6, o7, o8, o9, o10, o11];
 
 	//position
 	const divePos = dives.map((d) => {
@@ -78,6 +76,10 @@ const DiveCardEleven = ({ back, dive, info }) => {
 		op += optionals[i];
 	}
 	let optDD = op.toFixed(1);
+	let finalOptDD = (d) => {
+		if (d > 0) return d;
+		else return '';
+	};
 	//vol
 	const voluntaries = dive.map((d) => {
 		if (!d.optional) {
@@ -90,6 +92,10 @@ const DiveCardEleven = ({ back, dive, info }) => {
 		vo += voluntaries[i];
 	}
 	let volDD = vo.toFixed(1);
+	let finalVolDD = (d) => {
+		if (d > 0) return d;
+		else return '';
+	};
 
 	//Download PDF
 	const [docName, setDocName] = useState('');
@@ -120,61 +126,86 @@ const DiveCardEleven = ({ back, dive, info }) => {
 		doc.text(d1.num + divePos[0], 36.5, 60);
 		doc.text(d1.direction + ' ' + d1.rotation, 52, 60);
 		doc.text(position[0], 109, 60);
-		doc.text(d1.difficulty, 125, 60);
+		if (o1 || (!o1 && underNine)) {
+			doc.text(d1.difficulty, 125, 60);
+		}
 		//dive two
 		doc.text(d2.num + divePos[1], 36.5, 70);
 		doc.text(d2.direction + ' ' + d2.rotation, 52, 70);
 		doc.text(position[1], 109, 70);
-		doc.text(d2.difficulty, 125, 70);
+		if (o2 || (!o2 && underNine)) {
+			doc.text(d2.difficulty, 125, 70);
+		}
 		//dive three
 		doc.text(d3.num + divePos[2], 36.5, 79.5);
 		doc.text(d3.direction + ' ' + d3.rotation, 52, 79.5);
 		doc.text(position[2], 109, 79.5);
-		doc.text(d3.difficulty, 125, 79.5);
+		if (o3 || (!o3 && underNine)) {
+			doc.text(d3.difficulty, 125, 79.5);
+		}
 		//dive four
 		doc.text(d4.num + divePos[3], 36.5, 89.5);
 		doc.text(d4.direction + ' ' + d4.rotation, 52, 89.5);
 		doc.text(position[3], 109, 89.5);
-		doc.text(d4.difficulty, 125, 89.5);
+		if (o4 || (!o4 && underNine)) {
+			doc.text(d4.difficulty, 125, 89.5);
+		}
 		//dive five
 		doc.text(d5.num + divePos[4], 36.5, 99);
 		doc.text(d5.direction + ' ' + d5.rotation, 52, 99);
 		doc.text(position[4], 109, 99);
-		doc.text(d5.difficulty, 125, 99);
+		if (o5 || (!o5 && underNine)) {
+			doc.text(d5.difficulty, 125, 99);
+		}
 		//dive six
 		doc.text(d6.num + divePos[5], 36.5, 109);
 		doc.text(d6.direction + ' ' + d6.rotation, 52, 109);
 		doc.text(position[5], 109, 109);
-		doc.text(d6.difficulty, 125, 109);
+		if (o6 || (!o6 && underNine)) {
+			doc.text(d6.difficulty, 125, 109);
+		}
 		//dive seven
 		doc.text(d7.num + divePos[6], 36.5, 119);
 		doc.text(d7.direction + ' ' + d7.rotation, 52, 119);
 		doc.text(position[6], 109, 119);
-		doc.text(d7.difficulty, 125, 119);
+		if (o7 || (!o7 && underNine)) {
+			doc.text(d7.difficulty, 125, 119);
+		}
 		//dive eight
 		doc.text(d8.num + divePos[7], 36.5, 128.5);
 		doc.text(d8.direction + ' ' + d8.rotation, 52, 128.5);
 		doc.text(position[7], 109, 128.5);
-		doc.text(d8.difficulty, 125, 128.5);
+		if (o8 || (!o8 && underNine)) {
+			doc.text(d8.difficulty, 125, 128.5);
+		}
 		//dive nine
 		doc.text(d9.num + divePos[8], 36.5, 139);
 		doc.text(d9.direction + ' ' + d9.rotation, 52, 139);
 		doc.text(position[8], 109, 139);
-		doc.text(d9.difficulty, 125, 139);
+		if (o9 || (!o9 && underNine)) {
+			doc.text(d9.difficulty, 125, 139);
+		}
 		//dive ten
 		doc.text(d10.num + divePos[9], 36.5, 149);
 		doc.text(d10.direction + ' ' + d10.rotation, 52, 149);
 		doc.text(position[9], 109, 149);
-		doc.text(d10.difficulty, 125, 149);
+		if (o10 || (!o10 && underNine)) {
+			doc.text(d10.difficulty, 125, 149);
+		}
 		//dive eleven
 		doc.text(d11.num + divePos[10], 36.5, 158.5);
 		doc.text(d11.direction + ' ' + d11.rotation, 52, 158.5);
-		doc.text(position[10], 109, 158.5);
+		if (o11 || (!o11 && underNine)) {
+			doc.text(position[10], 109, 158.5);
+		}
+
 		doc.text(d11.difficulty, 125, 158.5);
 		//Vol dd
-		doc.text(volDD, 87, 170);
+		if (underNine) {
+			doc.text(finalVolDD(volDD), 87, 170);
+		}
 		//opt dd
-		doc.text(optDD, 109, 170);
+		doc.text(finalOptDD(optDD), 109, 170);
 
 		//Opt Circles
 		if (!o1) {
@@ -221,13 +252,29 @@ const DiveCardEleven = ({ back, dive, info }) => {
 			doc.ellipse(41, 158, 7, 4);
 			doc.ellipse(127.7, 158, 5, 4);
 		}
+		if (verify) doc.text('Verified', 108, 39);
 
 		doc.save(docName);
 	}
 
+	const overNineMessage = () => {
+		if (!underNine) {
+			return (
+				<div className="form-label">
+					<div className="dive-invalid">
+						**You will need to enter the DDs for your voluntary dives manually.
+						Be sure to adjust the DD of one or more voluntary dives so your
+						total will equal 9.0.
+					</div>
+				</div>
+			);
+		}
+	};
+
 	return (
 		<div className="page-container">
 			<h1>Download Dive Card</h1>
+			{overNineMessage()}
 			<h3>Name PDF:</h3>
 			<input className="form-input" onChange={onChange}></input>
 

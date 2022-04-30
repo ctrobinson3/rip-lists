@@ -75,7 +75,6 @@ const dives = ({ entry, verify }) => {
 			return <div className="dive-correct">All good!</div>;
 		} else verify(false);
 	};
-
 	//dd
 
 	var dd = (d) => {

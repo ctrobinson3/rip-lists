@@ -2,6 +2,7 @@
 	display: flex;
 	flex-direction: row;
 	margin-top: 45px;
+	z-index: 1000;
 }
 
 .dives-tabs {
@@ -17,6 +18,7 @@
 	box-sizing: content-box;
 	position: relative;
 	outline: none;
+	z-index: 1000;
 }
 .dives-tabs:not(:last-child) {
 	border-right: 1px solid rgba(0, 0, 0, 0.274);
@@ -51,6 +53,7 @@
 	min-height: 200px;
 	display: none;
 	overflow-y: scroll;
+	z-index: 1000;
 }
 
 .active-content {
@@ -58,10 +61,12 @@
 	max-height: 630px;
 
 	min-height: 200px;
+	z-index: 1000;
 }
 
 .dives-container {
 	margin-left: -15px;
+	z-index: 1000;
 }
 .dm-dif-div {
 	background-color: var(--light);
