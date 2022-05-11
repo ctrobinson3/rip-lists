@@ -12,7 +12,7 @@ const RulesModal = ({ closeRulesModal }) => {
 					>
 						Close
 					</button>
-					<h1 className="modal-header">Six Dive Rules</h1>
+					<h1 className="modal-header">Eleven Dive Rules</h1>
 					<div className="modal-text">
 						<ul>
 							<li>Eleven valid dives must be entered.</li>

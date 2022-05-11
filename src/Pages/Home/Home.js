@@ -42,6 +42,9 @@ export default function Home() {
     return (
         <div className='home-div'>
             <header className='home-header'>
+                <h1 className='home-logo'>
+                    Rip Lists
+                </h1>
                 <h1 className='home-head'>Create Dive Card</h1>
             </header>
             <main className='home-main'>
@@ -50,22 +53,22 @@ export default function Home() {
                         Dive Amount:
                     </h2>
                     <div className='home-buttons'>
-                    <button
-                        type='button'
-                        className={type === '6-dive' ? 'home-button-active home-but' : 'form-button home-but'}
-                        id='type'
-                        value='6-dive'
-                        onClick={onMutate}>
-                        6 Dive
-                    </button>
-                    <button
-                        type='button'
-                        className={type === '11-dive' ? 'home-button-active home-but' : 'form-button home-but'}
-                        id='type'
-                        value='11-dive'
-                        onClick={onMutate}>
-                        11 Dive
-                    </button>
+                        <button
+                            type='button'
+                            className={type === '6-dive' ? 'home-button-active home-but' : 'form-button home-but'}
+                            id='type'
+                            value='6-dive'
+                            onClick={onMutate}>
+                            6 Dive
+                        </button>
+                        <button
+                            type='button'
+                            className={type === '11-dive' ? 'home-button-active home-but' : 'form-button home-but'}
+                            id='type'
+                            value='11-dive'
+                            onClick={onMutate}>
+                            11 Dive
+                        </button>
                     </div>
                     <div className='home-select-div'>
                     <button type='submit' className='form-button home-select'>Select</button>

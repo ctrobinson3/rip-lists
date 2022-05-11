@@ -25,6 +25,7 @@ const SecondRound = ({ next, back, dives, onChange, onClick, opt }) => {
 						id="d6"
 						value={dives.d6}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -46,6 +47,7 @@ const SecondRound = ({ next, back, dives, onChange, onClick, opt }) => {
 						id="d7"
 						value={dives.d7}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -67,6 +69,7 @@ const SecondRound = ({ next, back, dives, onChange, onClick, opt }) => {
 						id="d8"
 						value={dives.d8}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">

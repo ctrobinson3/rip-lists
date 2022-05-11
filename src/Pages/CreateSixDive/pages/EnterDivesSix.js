@@ -74,6 +74,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d1"
 						value={d1}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Second Dive */}
@@ -85,6 +86,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d2"
 						value={d2}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Third Dive */}
@@ -96,6 +98,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d3"
 						value={d3}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Fourth Dive */}
@@ -107,6 +110,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d4"
 						value={d4}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Fifth Dive */}
@@ -118,6 +122,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d5"
 						value={d5}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Sixth Dive */}
@@ -129,6 +134,7 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 						id="d6"
 						value={d6}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 				</div>
 			</form>

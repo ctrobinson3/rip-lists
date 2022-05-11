@@ -14,7 +14,13 @@ const DiveModalContent = () => {
 	};
 
 	return (
-		<div className="dives-container">
+		<div className="dives-container">			
+			<div className="dive-modal-head">
+				<p className="dive-p">A = <b>Straight</b></p>
+				<p className="dive-p">B =<b>Pike</b></p>
+				<p className="dive-p">C = <b>Tuck</b></p>
+				<p className="dive-p">D = <b>Free</b></p>
+			</div>
 			<div className="dives-bloc">
 				<div
 					className={
@@ -57,7 +63,6 @@ const DiveModalContent = () => {
 					Twist
 				</div>
 			</div>
-
 			<div className="dives-content-tabs">
 				<div
 					className={

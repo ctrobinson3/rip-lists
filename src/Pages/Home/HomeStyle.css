@@ -15,15 +15,25 @@
     justify-content: center;
 }
 
+.home-header{
+    flex-direction: column;
+    text-align: center;
+}
+
+.home-logo{
+    font-family: 'Nanum Pen Script', cursive;
+    font-size: 100px;
+}
+
 .home-div{
     flex-direction: column;
-    height: 100vh;
+    height: 75vh;
     color: white;
 }
 
 .home-but{
     padding: 20px 50px;
-    margin: 20px;
+    margin: 10px;
     font-weight: 800;
     border:none;
 }
@@ -31,6 +41,7 @@
 .home-button-active{
     border-radius: 2rem;
     background-color: var(--dark);
+    border: 10px solid white;
     color: white;
 }
 
@@ -39,3 +50,4 @@
     border: none;
     font-weight: 800;
 }
+

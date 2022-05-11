@@ -24,6 +24,7 @@ const ThirdRound = ({ back, dives, onChange, onClick, opt }) => {
 						id="d9"
 						value={dives.d9}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -45,6 +46,7 @@ const ThirdRound = ({ back, dives, onChange, onClick, opt }) => {
 						id="d10"
 						value={dives.d10}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -66,6 +68,7 @@ const ThirdRound = ({ back, dives, onChange, onClick, opt }) => {
 						id="d11"
 						value={dives.d11}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">

@@ -24,6 +24,7 @@ const FirstRound = ({ next, dives, onChange, onClick, opt }) => {
 						id="d1"
 						value={dives.d1}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -45,6 +46,7 @@ const FirstRound = ({ next, dives, onChange, onClick, opt }) => {
 						id="d2"
 						value={dives.d2}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -66,6 +68,7 @@ const FirstRound = ({ next, dives, onChange, onClick, opt }) => {
 						id="d3"
 						value={dives.d3}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -87,6 +90,7 @@ const FirstRound = ({ next, dives, onChange, onClick, opt }) => {
 						id="d4"
 						value={dives.d4}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">
@@ -108,6 +112,7 @@ const FirstRound = ({ next, dives, onChange, onClick, opt }) => {
 						id="d5"
 						value={dives.d5}
 						onChange={onChange}
+						placeholder=' Enter Dive Number'
 					/>
 					<div className="opt-container">
 						<label className="toggle">

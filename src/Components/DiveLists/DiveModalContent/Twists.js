@@ -120,9 +120,9 @@ const Twists = () => {
 				<h3 className="dm-h3">Back</h3>
 				<div>{display(1, backTwistArray)}</div>
 				<h3 className="dm-h3">Reverse</h3>
-				<div>{display(2, reverseTwistArray)}</div>
-				<h3 className="dm-h3">Inward</h3>
 				<div>{display(3, inwardTwistArray)}</div>
+				<h3 className="dm-h3">Inward</h3>				
+				<div>{display(2, reverseTwistArray)}</div>
 			</div>
 		</div>
 	);
