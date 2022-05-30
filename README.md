@@ -9,3 +9,17 @@ Diving is a very niche sport, and when it comes to niche things, it can be hard 
 <br>
 <img src="img/MainPage.PNG" width=300>
 The front page has two options (for now), 6 or 11 dive meets. For simplicity's sake, we will walk through how to make a 6 dive card.
+<img src="img/DiverInfo6.PNG" width=300>
+The first page is pretty self explanatory. You will enter the information of the diver, meet, coach, team, and date.
+<img src="img/EnterSixDives.PNG" width=300>
+Next, you will enter the dive numbers you plan to do. In diving, there are numbers that are associated with each dive. The number is broken down into three sections: direction, rotations, and position. For dive number 103b, the "1" indicates that it's a forward direction, the "03" indicates that there's 1.5 rotations (each half rotation adds a whole number), and the "b" tells us that the dive is in a pike position. If people are not familiar with the dive numbers or rules of the event, there's a "Rules" and "Dives" modal that can be looked through to make sure you're entering the correct dive.
+<h4>Rules Modal:</h4>
+<img src="img/SixDiveRules.PNG">
+<h4>Dives Modal:</h4>
+<img src="img/Modal.PNG">
+Once all dives are entered, you can submit your dives and move on to the next page.
+<img src="img/SixDiveCheck.PNG">
+The "List Check" page will go through the entered dives and determine if everything was entered correctly and if rules were followed. If a dive is entered wrong or not entered at all, "Invalid Dive" will come up in place of the entry. If the dives are entered how the diver or athlete wants, then they can submit the card for download.
+<img src="img/SixCardDownload">
+All that's left to do is name the download of the card and submit! The file will be downloaded directly to your device as a PDF. Below is the finished dive card. As you can see, there's a lot of information that is needed to fill out a dive card. This takes a 5-10 minute process and brings it down to less than a minute and also has the peace of mind of knowing it's done right.
+<img src="img/SixDiveCard.PNG">
