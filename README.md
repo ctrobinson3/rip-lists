@@ -26,3 +26,6 @@ All that's left to do is name the download of the card and submit! The file will
 <img src="img/SixCardDownload.PNG">
 <b>Finished Card:</b>
 <img src="img/SixDiveCard.PNG">
+<hr>
+<h3>What's Next?</h3>
+Rip Lists will continue to be built upon and made better and better. An app version is currently in the works. For now, the rules only follow NFHS diving rules for 1 meter diving. There's a whole world of different types of meets with other rules, other amounts of diving, and of course, different heights of boards/platforms.
