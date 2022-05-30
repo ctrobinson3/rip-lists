@@ -6,4 +6,4 @@ Diving is a very niche sport, and when it comes to niche things, it can be hard 
 <br>
 <h3>How do you use it?</h3>
 <br>
-<h5>Front Page</h5>
+<h4>Front Page</h4>
