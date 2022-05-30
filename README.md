@@ -24,4 +24,5 @@ The "List Check" page will go through the entered dives and determine if everyth
 <img src="img/SixDiveCheck.PNG">
 All that's left to do is name the download of the card and submit! The file will be downloaded directly to your device as a PDF. Below is the finished dive card. As you can see, there's a lot of information that is needed to fill out a dive card. This takes a 5-10 minute process and brings it down to less than a minute and also has the peace of mind of knowing it's done right.
 <img src="img/SixCardDownload.PNG">
+<b>Finished Card:</b>
 <img src="img/SixDiveCard.PNG">
