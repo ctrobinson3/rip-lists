@@ -7,4 +7,4 @@ Diving is a very niche sport, and when it comes to niche things, it can be hard 
 <h3>How do you use it?</h3>
 <h4>Front Page</h4>
 <br>
-![](img/MainPage.png)
+![](img/modal.png)
