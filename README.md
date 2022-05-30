@@ -8,4 +8,4 @@ Diving is a very niche sport, and when it comes to niche things, it can be hard 
 <h4>Front Page</h4>
 <br>
 <img src="img/MainPage.PNG" width=300>
-test
+The front page has two options (for now), 6 or 11 dive meets. For simplicity's sake, we will walk through how to make a 6 dive card.
