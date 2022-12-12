@@ -1,0 +1,80 @@
+Header {
+	text-align: center;
+}
+
+.meets-wrap {
+	width: 100%;
+	display: flex;
+}
+
+.meet-header {
+	font-size: 70px;
+	font-weight: 300;
+	margin-bottom: 0;
+}
+
+.meets-h2 {
+	font-size: 40px;
+	font-weight: 300;
+	margin-top: 0px;
+}
+
+.meets-div {
+	width: 50%;
+	height: fit-content;
+
+	/* border: 1px solid black; */
+}
+
+.meets-head {
+	width: 100%;
+	text-align: center;
+}
+
+.meets-data {
+	margin: 20px;
+}
+
+.meets-create {
+	padding-top: 40px;
+	display: flex;
+	justify-content: center;
+}
+
+.meet-create-btn {
+	padding: 40px;
+}
+
+.meet-list-wrap {
+	display: flex;
+	flex-wrap: wrap;
+	height: 700px;
+	overflow-y: scroll;
+}
+
+/* future meets */
+a {
+	font-size: 30px;
+}
+
+.meet-opt {
+	border: 1px solid black;
+	cursor: pointer;
+
+	padding: 10px;
+	width: 300px;
+	margin: 20px;
+	list-style-type: none;
+	text-decoration: none;
+
+	flex-wrap: wrap;
+}
+
+.meet-opt-single {
+	text-decoration: none;
+	color: black;
+}
+
+.meet-opt:hover {
+	background-color: grey;
+}

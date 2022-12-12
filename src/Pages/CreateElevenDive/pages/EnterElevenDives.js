@@ -59,16 +59,16 @@ const EnterElevenDives = ({
 	}
 
 	return (
-		<div className="page-container">
-			<header className="eleven-head">
-				<h1>Enter Eleven Dives</h1>
+		<div className='page-container'>
+			<header className='eleven-head'>
+				<p className='header'>Enter Eleven Dives</p>
 			</header>
 
 			{/* Rules modal */}
-			<div className="modal-but-div">
+			<div className='modal-but-div'>
 				<button
-					type="button"
-					className="modal-button"
+					type='button'
+					className='modal-button'
 					onClick={() => {
 						setOpenRulesModal(true);
 					}}
@@ -78,8 +78,8 @@ const EnterElevenDives = ({
 				{openRulesModal && <RulesModal closeRulesModal={setOpenRulesModal} />}
 				{/* Dives Modal */}
 				<button
-					type="button"
-					className="modal-button"
+					type='button'
+					className='modal-button'
 					onClick={() => {
 						setOpenDiveModal(true);
 					}}
@@ -88,8 +88,8 @@ const EnterElevenDives = ({
 				</button>
 				{openDiveModal && <DiveModal closeDiveModal={setOpenDiveModal} />}
 			</div>
-			<form className="six-form"></form>
-			<div className="input-div">
+			<form className='six-form'></form>
+			<div className='input-div'>
 				<RoundIndex
 					dives={dives}
 					onChange={onChange}
@@ -97,10 +97,10 @@ const EnterElevenDives = ({
 					opt={opt}
 				/>
 			</div>
-			<button type="button" className="form-button next" onClick={findDives}>
+			<button type='button' className='form-button next' onClick={findDives}>
 				Check List
 			</button>
-			<button type="button" className="form-button back" onClick={back}>
+			<button type='button' className='form-button back' onClick={back}>
 				Back
 			</button>
 		</div>

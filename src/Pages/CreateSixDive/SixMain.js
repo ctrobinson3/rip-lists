@@ -4,6 +4,7 @@ import DiverInfoSix from './pages/DiverInfoSix';
 import EnterDivesSix from './pages/EnterDivesSix';
 import CheckListSix from './pages/CheckListSix';
 import '../../Components/Styles/formstyle.css';
+import HomeNavDark from '../Home/HomeNavDark';
 
 const SixMain = () => {
 	//useState
@@ -67,15 +68,15 @@ const SixMain = () => {
 	switch (curStep) {
 		case 1:
 			return (
-				<>
-					<h2 className="h2">Six Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<DiverInfoSix info={info} onChange={handleInfo} next={next} />
-				</>
+				</div>
 			);
 		case 2:
 			return (
-				<>
-					<h2 className="h2">Six Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<EnterDivesSix
 						dive={dive}
 						onChange={handleDive}
@@ -83,12 +84,12 @@ const SixMain = () => {
 						next={next}
 						back={back}
 					/>
-				</>
+				</div>
 			);
 		case 3:
 			return (
-				<>
-					<h2 className="h2">Six Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<CheckListSix
 						next={next}
 						back={back}
@@ -96,14 +97,14 @@ const SixMain = () => {
 						onVerify={onVerify}
 						verify={verify}
 					/>
-				</>
+				</div>
 			);
 		case 4:
 			return (
-				<>
-					<h2 className="h2">Six Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<DiveCardSix back={back} dive={entry} info={info} verify={verify} />
-				</>
+				</div>
 			);
 	}
 };

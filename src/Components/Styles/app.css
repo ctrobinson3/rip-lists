@@ -1,15 +1,16 @@
-:root{
-    --primary: #0077B6;
-    --secondary: #48CAE4;
-    --dark: #03045E;
-    --mid: #023E8A;
-    --light: #CAF0F8;
+@import url('colors.css');
+
+body {
 }
 
-body{
-    background-color: var(--secondary);
+.page-bottom-buffer {
+	padding-bottom: 100px;
 }
 
-.page-bottom-buffer{
-    padding-bottom: 100px;
+.cursor {
+	cursor: pointer;
+}
+
+.underline {
+	text-decoration: underline;
 }

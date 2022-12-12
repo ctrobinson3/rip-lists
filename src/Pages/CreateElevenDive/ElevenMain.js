@@ -4,6 +4,7 @@ import DiverInfoEleven from './pages/DiverInfoEleven';
 import EnterElevenDives from './pages/EnterElevenDives';
 import CheckListEleven from './pages/CheckListEleven';
 import DiveCardEleven from './pages/DiveCardEleven';
+import HomeNavDark from '../Home/HomeNavDark';
 
 const ElevenMain = () => {
 	//info
@@ -93,19 +94,19 @@ const ElevenMain = () => {
 	switch (curStep) {
 		case 1:
 			return (
-				<>
-					<h2 className="h2">Eleven Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<DiverInfoEleven
 						next={next}
 						onChange={handleInfoChange}
 						info={info}
 					/>
-				</>
+				</div>
 			);
 		case 2:
 			return (
-				<>
-					<h2 className="h2">Eleven Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<EnterElevenDives
 						next={next}
 						back={back}
@@ -115,12 +116,12 @@ const ElevenMain = () => {
 						opt={isOpt}
 						onSubmit={handleEntry}
 					/>
-				</>
+				</div>
 			);
 		case 3:
 			return (
-				<>
-					<h2 className="h2">Eleven Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<CheckListEleven
 						next={next}
 						back={back}
@@ -129,12 +130,12 @@ const ElevenMain = () => {
 						onVerify={onVerify}
 						handleUnderNine={handleUnderNine}
 					/>
-				</>
+				</div>
 			);
 		default:
 			return (
-				<>
-					<h2 className="h2">Eleven Dives</h2>
+				<div className='page-wrap'>
+					<HomeNavDark />
 					<DiveCardEleven
 						back={back}
 						dive={entry}
@@ -142,7 +143,7 @@ const ElevenMain = () => {
 						verify={verify}
 						underNine={underNine}
 					/>
-				</>
+				</div>
 			);
 	}
 };

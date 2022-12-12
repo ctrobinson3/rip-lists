@@ -1,22 +1,35 @@
 body {
-    margin: 0;
-    font-family: 'Quicksand', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-  }
-  
-  button{
-    font-family: 'Quicksand', sans-serif;
-    cursor: pointer;
-  }
-  
-  input{
-    border: none;
-    font-family: 'Quicksand', sans-serif;
-  }
-  
-  code {
-    font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-      monospace;
-  }
-  
+	margin: 0;
+	/* font-family: 'Quicksand', sans-serif; */
+	font-family: 'Jost', sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	min-height: 100vh;
+	height: fit-content;
+
+	/* background: radial-gradient(
+		farthest-corner at 75% 75%,
+		var(--secondary),
+		var(--primary)
+	); */
+	background: linear-gradient(
+		to bottom right,
+		var(--testlight),
+		var(--testprimarylight)
+	);
+}
+
+button {
+	font-family: 'Quicksand', sans-serif;
+	cursor: pointer;
+}
+
+input {
+	border: none;
+	font-family: 'Quicksand', sans-serif;
+}
+
+code {
+	font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+		monospace;
+}

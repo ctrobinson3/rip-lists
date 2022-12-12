@@ -38,13 +38,13 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 	}
 
 	return (
-		<div className="page-container">
-			<h1 className="header">Enter Dives</h1>
+		<div className='page-container'>
+			<h1 className='header'>Enter Dives</h1>
 			{/* Rules modal */}
-			<div className="modal-but-div">
+			<div className='modal-but-div'>
 				<button
-					type="button"
-					className="modal-button"
+					type='button'
+					className='modal-button'
 					onClick={() => {
 						setOpenRulesModal(true);
 					}}
@@ -54,8 +54,8 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 				{openRulesModal && <RulesModal closeRulesModal={setOpenRulesModal} />}
 				{/* Dives Modal */}
 				<button
-					type="button"
-					className="modal-button"
+					type='button'
+					className='modal-button'
 					onClick={() => {
 						setOpenDiveModal(true);
 					}}
@@ -64,74 +64,74 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 				</button>
 				{openDiveModal && <DiveModal closeDiveModal={setOpenDiveModal} />}
 			</div>
-			<form className="six-form">
+			<form className='six-form'>
 				{/* First Dive */}
-				<div className="input-div">
-					<label className="form-label">First Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>First Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d1"
+						className='form-input'
+						type='text'
+						id='d1'
 						value={d1}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Second Dive */}
-				<div className="input-div">
-					<label className="form-label">Second Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>Second Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d2"
+						className='form-input'
+						type='text'
+						id='d2'
 						value={d2}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Third Dive */}
-				<div className="input-div">
-					<label className="form-label">Third Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>Third Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d3"
+						className='form-input'
+						type='text'
+						id='d3'
 						value={d3}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Fourth Dive */}
-				<div className="input-div">
-					<label className="form-label">Fourth Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>Fourth Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d4"
+						className='form-input'
+						type='text'
+						id='d4'
 						value={d4}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Fifth Dive */}
-				<div className="input-div">
-					<label className="form-label">Fifth Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>Fifth Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d5"
+						className='form-input'
+						type='text'
+						id='d5'
 						value={d5}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
 					/>
 				</div>
 				{/* Sixth Dive */}
-				<div className="input-div">
-					<label className="form-label">Sixth Dive</label>
+				<div className='input-div'>
+					<label className='form-label'>Sixth Dive</label>
 					<input
-						className="form-input"
-						type="text"
-						id="d6"
+						className='form-input'
+						type='text'
+						id='d6'
 						value={d6}
 						onChange={onChange}
 						placeholder=' Enter Dive Number'
@@ -140,11 +140,11 @@ const EnterDivesSix = ({ dive, onChange, onSubmit, next, back }) => {
 			</form>
 
 			{/* butttons */}
-			<button type="button" className="form-button next" onClick={findDives}>
+			<button type='button' className='form-button next' onClick={findDives}>
 				Next
 			</button>
 
-			<button type="button" className="form-button back" onClick={back}>
+			<button type='button' className='form-button back' onClick={back}>
 				Back
 			</button>
 		</div>

@@ -74,7 +74,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 		if (dive.num === ' ') {
 			elevenDives = false;
 			return (
-				<p className="dive-invalid" key={i}>
+				<p className='dive-invalid' key={i}>
 					InvalidDive
 				</p>
 			);
@@ -158,24 +158,10 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 				}
 			}
 		}
-		// const volButton = () => {
-		// 	if (volTotal > 9) {
-		// 		volOverNine = true;
-		// 		return (
-		// 			<button
-		// 				className="form-button change-dd"
-		// 				onClick={() => {
-		// 					setOpenOverVolDDModal(true);
-		// 				}}
-		// 			>
-		// 				Change DDs
-		// 			</button>
-		// 		);
-		// 	}
-		// };
+
 		if (optTotal > 0 && volTotal > 0) {
 			return (
-				<div className="dive-display" style={{ fontWeight: 800 }}>
+				<div className='dive-display' style={{ fontWeight: 800 }}>
 					<p>Opt DD: {optTotal}</p>
 					<p>Vol DD: {volTotal}</p>
 					{/* {volButton()} */}
@@ -183,13 +169,13 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 			);
 		} else if (volTotal > 0)
 			return (
-				<div className="dive-display" style={{ fontWeight: 800 }}>
+				<div className='dive-display' style={{ fontWeight: 800 }}>
 					<p>Vol DD: {volTotal}</p>
 				</div>
 			);
 		else if (optTotal > 0)
 			return (
-				<div className="dive-display" style={{ fontWeight: 800 }}>
+				<div className='dive-display' style={{ fontWeight: 800 }}>
 					<p>Opt DD: {optTotal}</p>
 				</div>
 			);
@@ -227,29 +213,29 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	const checkEleven = () => {
 		if (!elevenDives)
 			return (
-				<div className="dive-error ">*Some dives were entered incorrectly</div>
+				<div className='dive-error '>*Some dives were entered incorrectly</div>
 			);
 	};
 	const repeatedDives = () => {
 		if (repeatDives)
-			return <div className="dive-error ">*Dives are repeated</div>;
+			return <div className='dive-error '>*Dives are repeated</div>;
 	};
 	const firstRoundErrorMessage = () => {
 		if (!roundOneValid)
-			return <div className="dive-error ">3 optionals needed</div>;
+			return <div className='dive-error '>3 optionals needed</div>;
 	};
 	const secondRoundErrorMessage = () => {
 		if (!roundTwovalid)
-			return <div className="dive-error ">1 optional needed</div>;
+			return <div className='dive-error '>1 optional needed</div>;
 	};
 	const thirdRoundErrorMessage = () => {
 		if (!roundThreeValid)
-			return <div className="dive-error ">2 optionals needed</div>;
+			return <div className='dive-error '>2 optionals needed</div>;
 	};
 	const catErrorOpt = () => {
 		if (!allCategoriesOpt)
 			return (
-				<div className="dive-error ">
+				<div className='dive-error '>
 					*All 5 categories are not represented in your optionals
 				</div>
 			);
@@ -257,7 +243,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	const catErrorVol = () => {
 		if (!allCategoriesVol)
 			return (
-				<div className="dive-error ">
+				<div className='dive-error '>
 					*All 5 categories are not represented in your voluntaries
 				</div>
 			);
@@ -265,7 +251,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	const firstEightError = () => {
 		if (!firstEightCategories)
 			return (
-				<div className="dive-error ">
+				<div className='dive-error '>
 					*All 5 categories are not represented in the first 8 dives (voluntary
 					or optional)
 				</div>
@@ -274,7 +260,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	const repeatOptError = () => {
 		if (!noRepeatOpt)
 			return (
-				<div className="dive-error ">
+				<div className='dive-error '>
 					*2 optionals of the same category cannot be represented in the first 8
 					dives
 				</div>
@@ -283,7 +269,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	const volOverNineError = () => {
 		if (volOverNine)
 			return (
-				<div className="dive-error">
+				<div className='dive-error'>
 					Voluntaries are over 9.0 DD. You will still be able to submit your
 					dive card, but the voluntary DDs will have to be filled in manually.
 				</div>
@@ -305,7 +291,7 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 			!volOverNine
 		) {
 			onVerify(true);
-			return <div className="dive-correct">All Good!</div>;
+			return <div className='dive-correct'>All Good!</div>;
 		} else onVerify(false);
 	};
 	//circle voluntaries
@@ -317,9 +303,9 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 	};
 
 	return (
-		<div className="page-container">
+		<div className='page-container'>
 			{openOverVolDDModal && <OverVolDD closeModal={setOpenOverVolDDModal} />}
-			<div className="header-error">
+			<div className='header-error'>
 				{checkEleven()}
 				{repeatedDives()}
 				{catErrorOpt()}
@@ -330,11 +316,11 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 			</div>
 			<h3>Entered Dives:</h3>
 			<p>Voluntaries are circled</p>
-			<div className="page-container">
-				<div className="round-container">
-					<h4 className="round-head">First Round</h4>
+			<div className='page-container'>
+				<div className='round-container'>
+					<h4 className='round-head'>First Round</h4>
 					{firstRoundErrorMessage()}
-					<div className="dive-div">
+					<div className='dive-div'>
 						<div className={volCheck(0)}>{displayedDive[0]}</div>
 						<div className={volCheck(1)}>{displayedDive[1]}</div>
 						<div className={volCheck(2)}>{displayedDive[2]}</div>
@@ -342,19 +328,19 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 						<div className={volCheck(4)}>{displayedDive[4]}</div>
 					</div>
 				</div>
-				<div className="round-container">
-					<h4 className="round-head">Second Round</h4>
+				<div className='round-container'>
+					<h4 className='round-head'>Second Round</h4>
 					{secondRoundErrorMessage()}
-					<div className="dive-div">
+					<div className='dive-div'>
 						<div className={volCheck(5)}>{displayedDive[5]}</div>
 						<div className={volCheck(6)}>{displayedDive[6]}</div>
 						<div className={volCheck(7)}>{displayedDive[7]}</div>
 					</div>
 				</div>
-				<div className="round-container">
-					<h4 className="round-head">Third Round</h4>
+				<div className='round-container'>
+					<h4 className='round-head'>Third Round</h4>
 					{thirdRoundErrorMessage()}
-					<div className="dive-div">
+					<div className='dive-div'>
 						<div className={volCheck(8)}>{displayedDive[8]}</div>
 						<div className={volCheck(9)}>{displayedDive[9]}</div>
 						<div className={volCheck(10)}>{displayedDive[10]}</div>

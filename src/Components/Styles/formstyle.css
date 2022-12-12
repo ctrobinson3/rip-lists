@@ -1,32 +1,29 @@
-:root {
-	--primary: #0077b6;
-	--secondary: #48cae4;
-	--dark: #03045e;
-	--mid: #023e8a;
-	--light: #caf0f8;
-}
+@import url('colors.css');
 
 /* General */
+.page-wrap {
+}
+
 .page-container {
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 }
 
-.h2 {
-	font-weight: 400;
-	padding-left: 20px;
-}
-
 .h3 {
 	display: flex;
 	align-items: center;
 	justify-content: center;
+
+	font-size: 40px;
+	font-weight: 300;
+
+	margin-top: -10px;
 }
 
 .header {
-	font-weight: 800;
-	font-size: 10mm;
+	font-weight: 300;
+	font-size: 40px;
 }
 
 .input-div {
@@ -37,25 +34,47 @@
 
 .form-label {
 	font-size: 6mm;
-	font-weight: 400;
+	font-weight: 300;
 }
 
 .form-input {
 	padding: 0.9rem 2.8rem;
-	font-weight: 600;
-	border-radius: 2rem;
+	font-weight: 400;
+	border-radius: 1rem;
+	border: 1px solid black;
 	font-size: 1rem;
 	margin: 0.5rem 0.5rem 0 0;
 	display: flex;
 	justify-content: center;
 	align-items: center;
+
+	background: rgba(255, 255, 255, 0.8);
 }
 
 .form-button {
-	margin-top: 20px;
-	color: var(--dark);
-	border: 3px solid;
-	border-radius: 2rem;
+	cursor: pointer;
+	font-size: 40px;
+	font-weight: 300;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	height: 100px;
+	width: 50px;
+	margin: 10px;
+	border-radius: 1em;
+
+	background: white;
+	background: rgba(255, 255, 255, 0.3);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.form-button:hover {
+	color: white;
+	background: rgba(104, 191, 231, 0.5);
 }
 
 .button-container {
@@ -77,9 +96,9 @@
 
 .back {
 	border-color: var(--primary);
-	font-size: 5mm;
-	padding: 0.5rem 3rem;
-	width: fit-content;
+	font-size: 20px;
+	height: 50px;
+	width: 75px;
 }
 
 .header-p {
@@ -88,25 +107,59 @@
 	display: flex;
 	justify-content: center;
 	font-size: 17px;
-	font-weight: 500;
+	font-weight: 300;
 }
 
 .submit-anyway {
-	border-color: red;
-	padding-top: 10px;
-	padding-bottom: 10px;
-	font-weight: 400;
+	border-color: var(--red);
+	font-size: 20px;
+	height: 35px;
 	width: fit-content;
 }
 
+.submit-anyway:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 49, 49, 0.8),
+		rgba(255, 46, 46, 0.8)
+	);
+}
+
 /* DiverInfoSix */
+.modal-but-div {
+	display: flex;
+}
 .modal-button {
-	border-radius: 2rem;
-	padding: 10px;
-	margin-left: 10px;
-	margin-right: 10px;
-	border: 3px solid;
-	border-color: var(--primary);
+	cursor: pointer;
+	font-size: 16px;
+	font-weight: 400;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	height: 40px;
+	width: 60px;
+	margin: 10px;
+	border-radius: 0.5rem;
+
+	background: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.3),
+		rgba(255, 255, 255, 0.3)
+	);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.modal-button:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.8)
+	);
 }
 
 .modal-button:active {
@@ -124,21 +177,22 @@ body.active-modal {
 	padding: 4px;
 	margin: 4px;
 	border-radius: 0.5rem;
+	font-weight: 400;
+	font-size: 20px;
 }
 
 .dive-invalid {
-	font-weight: 600;
-	color: red;
+	color: var(--red);
 }
 
 .dive-correct,
 .dive-error {
 	font-size: 6mm;
-	font-weight: 800;
+	font-weight: 400;
 	text-decoration-line: underline;
 }
 .dive-error {
-	color: red;
+	color: var(--red);
 	padding: 10px;
 }
 
@@ -176,7 +230,7 @@ body.active-modal {
 	margin-left: 10px;
 	padding: 4px;
 	font-size: 20px;
-	font-weight: 600;
+	font-weight: 300;
 }
 
 .toggle {
@@ -251,6 +305,9 @@ body.active-modal {
 .round-head {
 	display: flex;
 	justify-content: center;
+	font-weight: 300;
+	font-size: 30px;
+	margin: 0;
 }
 
 .dive-div {
@@ -274,4 +331,51 @@ body.active-modal {
 .change-dd {
 	border-color: red;
 	padding: 10px;
+}
+
+.p {
+	font-size: 30px;
+	font-weight: 300;
+}
+
+/* create home */
+.home-buttons-wrap {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.home-btn {
+	cursor: pointer;
+	font-size: 40px;
+	font-weight: 300;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	height: 100px;
+	width: 200px;
+	margin: 10px;
+	border-radius: 0.5em;
+
+	background: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.3),
+		rgba(255, 255, 255, 0.3)
+	);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+
+.home-btn:hover {
+	color: var(--dark);
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.8),
+		rgba(255, 255, 255, 0.8)
+	);
 }

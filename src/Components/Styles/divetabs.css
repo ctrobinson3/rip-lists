@@ -1,3 +1,5 @@
+@import url('colors.css');
+
 .dives-bloc {
 	display: flex;
 	flex-direction: row;
@@ -9,6 +11,7 @@
 	padding: 8px;
 	text-align: center;
 	font-size: 14px;
+	font-weight: 300;
 	width: 15.5%;
 	background-color: var(--primary);
 	color: white;
@@ -52,8 +55,6 @@
 	z-index: 1000;
 }
 
-
-
 .dives-container {
 	margin-left: -15px;
 	z-index: 1000;
@@ -62,7 +63,7 @@
 }
 
 .active-content {
-	display:block;
+	display: block;
 	z-index: 1000;
 	height: 55vh;
 	overflow-y: scroll;
@@ -86,7 +87,7 @@
 
 .dive {
 	font-size: 17px;
-	font-weight: 800;
+	font-weight: 300;
 }
 
 .dm-difficutly {
@@ -99,25 +100,30 @@
 	padding: 10px;
 	margin: 5px 0px;
 	max-height: 600px;
-	
+}
+
+.dm-h1 {
+	font-weight: 300;
+	font-size: 40px;
 }
 
 .dm-h3 {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-weight: 300;
 }
 
 .twist {
 	background-color: red;
 }
 
-.dive-modal-head{
+.dive-modal-head {
 	display: flex;
 	padding-top: 20px;
 	margin-bottom: -30px;
 }
 
-.dive-p{
+.dive-p {
 	padding: 0 10px;
 }

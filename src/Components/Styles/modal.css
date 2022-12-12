@@ -1,10 +1,4 @@
-:root {
-	--primary: #0077b6;
-	--secondary: #48cae4;
-	--dark: #03045e;
-	--mid: #023e8a;
-	--light: #caf0f8;
-}
+@import url('colors.css');
 
 .modal-container,
 .modal-background {
@@ -52,10 +46,15 @@
 	padding: 5px 7px;
 	background-color: white;
 	border: 3px solid var(--primary);
-	border-radius: 2rem;
+	border-radius: 1rem;
 }
 
 .dm-display {
 	display: flex;
 	flex-direction: row;
+}
+
+.modal-header {
+	font-weight: 300;
+	font-size: 50px;
 }

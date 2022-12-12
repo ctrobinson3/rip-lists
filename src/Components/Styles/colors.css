@@ -1,0 +1,22 @@
+:root {
+	--primary: #0077b6;
+	--yprim: #c0bd0b;
+	--secondary: #0e9ebb;
+	--dark: #020474;
+	--mid: #023e8a;
+	--light: #caf0f8;
+	--white: #f8f6f0;
+	--red: #e60000;
+
+	--testdark: #070600;
+	--testprimary: #2ec4b6;
+	--testprimarylight: #cbf3f0;
+	--testsecondary: #ff9f1c;
+	--testsecondarylight: #ffbf69;
+	--testlight: #f7f7ff;
+}
+
+/* 
+
+	--secondary: #48cae4;
+*/

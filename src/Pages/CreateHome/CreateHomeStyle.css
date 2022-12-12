@@ -1,0 +1,35 @@
+@import url('../../Components/Styles/colors.css');
+
+.home-header,
+.home-form-header,
+.home-main,
+.home-div,
+.home-select-div {
+	display: flex;
+}
+
+.home-select-div {
+	justify-content: center;
+}
+
+.home-header,
+.home-main,
+.home-form-header {
+	flex-direction: column;
+	text-align: center;
+}
+
+.home-form-header {
+	font-size: 40px;
+	font-weight: 300;
+}
+
+.home-head {
+	font-size: 80px;
+	font-weight: 300;
+}
+
+.home-div {
+	flex-direction: column;
+	color: var(--dark);
+}

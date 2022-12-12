@@ -19,7 +19,7 @@ const dives = ({ entry, verify }) => {
 		if (dive.num === ' ') {
 			sixDives = false;
 			return (
-				<p className="dive-invalid" key={i}>
+				<p className='dive-invalid' key={i}>
 					Invalid Dive
 				</p>
 			);
@@ -49,7 +49,7 @@ const dives = ({ entry, verify }) => {
 		const oAmt = Array.from(new Set(optList));
 		if (oAmt.length < 4) {
 			return (
-				<div className="dive-error">*Four categories are not represented</div>
+				<div className='dive-error'>*Four categories are not represented</div>
 			);
 		} else enoughCategories = true;
 	};
@@ -57,14 +57,14 @@ const dives = ({ entry, verify }) => {
 	//check for repeated dives
 	const repeatedDives = () => {
 		if (repeatDives)
-			return <div className="dive-error">*Dives are repeated</div>;
+			return <div className='dive-error'>*Dives are repeated</div>;
 	};
 
 	//checks for 6 valid dives
 	const checkSix = () => {
 		if (!sixDives)
 			return (
-				<div className="dive-error">*Some dives were entered incorrectly</div>
+				<div className='dive-error'>*Some dives were entered incorrectly</div>
 			);
 	};
 
@@ -72,7 +72,7 @@ const dives = ({ entry, verify }) => {
 	const allGood = () => {
 		if (!repeatDives && enoughCategories && sixDives) {
 			verify(true);
-			return <div className="dive-correct">All good!</div>;
+			return <div className='dive-correct'>All good!</div>;
 		} else verify(false);
 	};
 	//dd
@@ -87,7 +87,7 @@ const dives = ({ entry, verify }) => {
 		}
 		if (total > 0) {
 			return (
-				<div className="dive-display" style={{ fontWeight: 800 }}>
+				<div className='dive-display' style={{ fontWeight: 800 }}>
 					DD: {total}
 				</div>
 			);
@@ -96,14 +96,14 @@ const dives = ({ entry, verify }) => {
 
 	return (
 		<>
-			<div className="dive-display__header">
+			<div className='dive-display__header'>
 				{checkSix()}
 				{repeatedDives()}
 				{categoryCheck()}
 				{allGood()}
 			</div>
-			<h3>Entered Dives:</h3>
-			<div className="dive-display">{displayedDive}</div>
+			<p className='p'>Entered Dives:</p>
+			<div className='dive-display'>{displayedDive}</div>
 			{dd(diveList)}
 		</>
 	);
