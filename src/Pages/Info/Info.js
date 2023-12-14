@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import '../../Components/Styles/info.css';
 import DivesMain from './components/DivesMain';
 import HomeNavDark from '../Home/HomeNavDark';
+import HomeNavBurg from '../Home/HomeNavBurg';
 
 const Info = () => {
 	const [boardHeight, setBoardHeight] = useState('1');
@@ -13,6 +14,7 @@ const Info = () => {
 	return (
 		<div className='info-wrap'>
 			<HomeNavDark />
+			<HomeNavBurg />
 			<div className='info-header'>
 				<h1 className='info-head'>Dive DD</h1>
 			</div>
@@ -22,7 +24,7 @@ const Info = () => {
 				className='info-height-select'
 			>
 				<option value='1'>1-Meter</option>
-				<option value='3'>3-Meter</option>
+				{/* <option value='3'>3-Meter</option> */}
 			</select>
 			<div className='info-search'>
 				<input />

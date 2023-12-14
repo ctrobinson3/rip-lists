@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import HomeNavDark from '../Home/HomeNavDark';
 import './CreateHomeStyle.css';
+import HomeNavBurg from '../Home/HomeNavBurg';
 
 export default function CreateHome() {
 	//set dive count
@@ -44,6 +45,8 @@ export default function CreateHome() {
 	return (
 		<div className='home-div'>
 			<HomeNavDark />
+
+			<HomeNavBurg />
 			<header className='home-header'>
 				<h1 className='home-head'>Create Dive Card</h1>
 			</header>

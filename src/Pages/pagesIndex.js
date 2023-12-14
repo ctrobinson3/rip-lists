@@ -8,6 +8,9 @@ import MeetManager from './MeetManager/MeetManager';
 import HomeNav from './Home/HomeNav';
 import Info from './Info/Info';
 import OpenMeet from './MeetManager/OpenMeet/OpenMeet';
+import Manager from './MeetManager/MeetManager/Manager';
+import QuickMeet from './MeetManager/MeetManager/QuickMeet/QuickMeet';
+import TempPage from './temp/TempPage';
 
 export {
 	CreateHome,
@@ -20,4 +23,7 @@ export {
 	HomeNav,
 	Info,
 	OpenMeet,
+	Manager,
+	QuickMeet,
+	TempPage,
 };

@@ -8,7 +8,33 @@ const Landing = () => {
 	return (
 		<div className='landing-wrap'>
 			<div className='landing-header'>
-				<m.div
+				<div className='landing-head black-text'>The one </div>
+				<div className='landing-head black-text'>stop shop</div>
+
+				<div className='landing-head black-text'>for everything </div>
+				<div className='landing-head large black-text'>DIVING</div>
+			</div>
+			<div className='landing-squares'>
+				<div className='s-row'>
+					<div className='square' onClick={() => navigate('./create')}>
+						Cards
+					</div>
+					<div className='square' onClick={() => navigate('./temp')}>
+						Meets
+					</div>
+				</div>
+				<div className='s-row'>
+					<div className='square' onClick={() => navigate('./info')}>
+						Info
+					</div>
+					<div className='square' onClick={() => navigate('./login')}>
+						Dive Well
+					</div>
+				</div>
+
+				{/* ANIMATION */}
+
+				{/* <m.div
 					animate={{ x: [-100, 0], opacity: [0, 1] }}
 					transition={{
 						duration: 0.8,
@@ -72,7 +98,7 @@ const Landing = () => {
 							delay: 2.5,
 						}}
 						className='square'
-						onClick={() => navigate('./meet-manager')}
+						onClick={() => navigate('./meets')}
 					>
 						Meets
 					</m.div>
@@ -102,7 +128,7 @@ const Landing = () => {
 					>
 						Dive Well
 					</m.div>
-				</div>
+				</div> */}
 			</div>
 		</div>
 	);

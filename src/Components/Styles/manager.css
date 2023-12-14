@@ -1,0 +1,104 @@
+.manager-page {
+	margin: 20px;
+}
+
+.manager-body {
+	display: flex;
+	flex-direction: column;
+	width: 100%;
+	justify-content: center;
+}
+.manager-header {
+	font-size: 30px;
+	text-align: center;
+}
+
+.meet-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.manager-form {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 20px;
+}
+
+.qm-form-input {
+	margin: 10px;
+}
+
+/*  
+*/
+/* modal */
+/* 
+ */
+
+.qm-modal-container,
+.qm-modal-background {
+	width: 100vw;
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+}
+
+.qm-modal-background {
+	background: rgba(49, 49, 49, 0.8);
+	z-index: 99;
+}
+
+.qm-modal-content {
+	position: absolute;
+	top: 0;
+	margin-top: 50px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	line-height: 1.4;
+	background: #f1f1f1;
+	padding: 14px 28px;
+	border-radius: 10px;
+	width: 80%;
+	max-width: 600px;
+	z-index: 100;
+}
+
+.dive-input {
+	width: 60px;
+	text-align: center;
+}
+
+/* 
+*/
+/* Gen */
+/* 
+*/
+
+.qm-center {
+	width: 100%;
+	text-align: center;
+}
+
+.manager-med-txt {
+	font-size: 20px;
+	font-weight: 300;
+}
+input {
+	border-radius: 10px;
+	padding: 3px;
+	margin-left: 4px;
+}
+label,
+p {
+	font-weight: 300;
+}
+footer {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

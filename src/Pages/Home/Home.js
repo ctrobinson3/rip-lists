@@ -7,14 +7,20 @@ import Footer from './Components/Footer';
 import { navStateAtom } from '../../recoil/atoms';
 import { useRecoilState } from 'recoil';
 import HomeNav from './HomeNav';
+import HomeNavDark from './HomeNavDark';
+import HomeNavBurg from './HomeNavBurg';
 
 const Home = () => {
 	return (
 		<div className='home-wrap'>
-			<HomeNav />
-			<div className='video-div'>
+			<HomeNavDark />
+			<HomeNavBurg />
+
+			{/* VIDEO */}
+			{/* <div className='video-div'>
 				<video src={frontVideo} autoPlay loop muted />
-			</div>
+			</div> */}
+
 			<div className='home-content'>
 				<Landing />
 			</div>

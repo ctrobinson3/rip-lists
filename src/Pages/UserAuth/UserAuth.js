@@ -15,7 +15,7 @@ const UserAuth = () => {
 	const register = async () => {
 		try {
 			const user = await createUserWithEmailAndPassword(
-				auth,
+				// auth,
 				registerEmail,
 				registerPassword
 			);
