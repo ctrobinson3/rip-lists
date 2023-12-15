@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import Amplify from 'aws-amplify';
-import awsconfig from '../../aws-exports';
-import { withAuthenticator, Authenticator } from '@aws-amplify/ui-react';
-import HomeNavDark from '../Home/HomeNavDark';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 // import { async } from '@firebase/util';
 
