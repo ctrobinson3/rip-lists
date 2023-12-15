@@ -5,6 +5,7 @@ import EnterElevenDives from './pages/EnterElevenDives';
 import CheckListEleven from './pages/CheckListEleven';
 import DiveCardEleven from './pages/DiveCardEleven';
 import HomeNavDark from '../Home/HomeNavDark';
+import HomeNavBurg from '../Home/HomeNavBurg';
 
 const ElevenMain = () => {
 	//info
@@ -96,6 +97,7 @@ const ElevenMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<DiverInfoEleven
 						next={next}
 						onChange={handleInfoChange}
@@ -107,6 +109,7 @@ const ElevenMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<EnterElevenDives
 						next={next}
 						back={back}
@@ -122,6 +125,7 @@ const ElevenMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<CheckListEleven
 						next={next}
 						back={back}
@@ -136,6 +140,7 @@ const ElevenMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<DiveCardEleven
 						back={back}
 						dive={entry}

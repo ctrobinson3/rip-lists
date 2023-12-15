@@ -5,6 +5,7 @@ import EnterDivesSix from './pages/EnterDivesSix';
 import CheckListSix from './pages/CheckListSix';
 import '../../Components/Styles/formstyle.css';
 import HomeNavDark from '../Home/HomeNavDark';
+import HomeNavBurg from '../Home/HomeNavBurg';
 
 const SixMain = () => {
 	//useState
@@ -70,6 +71,7 @@ const SixMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<DiverInfoSix info={info} onChange={handleInfo} next={next} />
 				</div>
 			);
@@ -77,6 +79,7 @@ const SixMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<EnterDivesSix
 						dive={dive}
 						onChange={handleDive}
@@ -90,6 +93,7 @@ const SixMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<CheckListSix
 						next={next}
 						back={back}
@@ -103,6 +107,7 @@ const SixMain = () => {
 			return (
 				<div className='page-wrap'>
 					<HomeNavDark />
+					<HomeNavBurg />
 					<DiveCardSix back={back} dive={entry} info={info} verify={verify} />
 				</div>
 			);
