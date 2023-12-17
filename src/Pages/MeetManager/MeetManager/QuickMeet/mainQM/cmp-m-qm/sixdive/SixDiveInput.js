@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
+import DiveCheck from '../../../../../../../Components/DiveLists/DiveCheck';
+import { diveArrayFunction } from '../../../../../../../Components/DiveLists/DiveArray';
 
-const SixDiveInput = ({ next }) => {
+const SixDiveInput = ({ setEntry, next, handleInput, inputDive }) => {
 	const [verify, setVerify] = useState(false);
-	const [diveList, setDiveList] = useState({
+	const [tempList, setTempList] = useState([]);
+
+	const [dive, setDive] = useState({
 		d1: '',
 		d2: '',
 		d3: '',
@@ -10,12 +14,31 @@ const SixDiveInput = ({ next }) => {
 		d5: '',
 		d6: '',
 	});
-
-	const onSet = (e) => {
-		setDiveList({
-			...diveList,
+	const handleDive = (e) => {
+		setDive({
+			...dive,
 			[e.target.id]: e.target.value,
 		});
+	};
+
+	const { d1, d2, d3, d4, d5, d6 } = inputDive;
+
+	const diveCheck = DiveCheck;
+	const diveArray = diveArrayFunction();
+	const findDives = () => {
+		const list = [d1, d2, d3, d4, d5, d6];
+		const diveList = list.map((a) => {
+			let d = a.toLowerCase();
+			if (diveCheck.includes(d)) {
+				const index = diveCheck.indexOf(d);
+				const value = diveArray[index];
+				return value;
+			}
+			//returns an empty dive
+			else return diveArray[113];
+		});
+		setEntry(diveList);
+		next();
 	};
 
 	return (
@@ -27,8 +50,8 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d1'
-					value={diveList.d1}
-					onChange={onSet}
+					value={d1}
+					onChange={handleInput}
 				/>
 			</div>
 
@@ -38,8 +61,8 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d2'
-					value={diveList.d2}
-					onChange={onSet}
+					value={d2}
+					onChange={handleInput}
 				/>
 			</div>
 
@@ -49,8 +72,8 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d3'
-					value={diveList.d3}
-					onChange={onSet}
+					value={d3}
+					onChange={handleInput}
 				/>
 			</div>
 
@@ -60,8 +83,8 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d4'
-					value={diveList.d4}
-					onChange={onSet}
+					value={d4}
+					onChange={handleInput}
 				/>
 			</div>
 
@@ -71,8 +94,8 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d5'
-					value={diveList.d5}
-					onChange={onSet}
+					value={d5}
+					onChange={handleInput}
 				/>
 			</div>
 
@@ -82,11 +105,11 @@ const SixDiveInput = ({ next }) => {
 					className='dive-input'
 					type='text'
 					id='d6'
-					value={diveList.d6}
-					onChange={onSet}
+					value={d6}
+					onChange={handleInput}
 				/>
 			</div>
-			<button onClick={next}>Check Dives</button>
+			<button onClick={findDives}>Check Dives</button>
 		</div>
 	);
 };

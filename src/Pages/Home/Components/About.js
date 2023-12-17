@@ -36,12 +36,12 @@ export default function About() {
 				<div className='abt-content-right'>
 					<div className='abt-question'>What's the plan?</div>
 					<div className='abt-answer'>
-						I believe there is a need for a central hub in the diving world. A
+						I believe there is a need for a central hub in the diving world; a
 						place for divers, coaches, and supporters to communicate and share
-						their progress and ideas with one another. I to not only have an
-						easy and accessible way to create dive cards and run meets, but to
-						also display statistics for teams and individuals to track progress
-						and keep up on goals.
+						their progress and ideas with one another. I want to not only have
+						an easy and accessible way to create dive cards and run meets, but
+						to also display statistics for teams and individuals to track
+						progress and keep up on goals.
 					</div>
 				</div>
 			</Section>

@@ -1,0 +1,190 @@
+/* Diver Info */
+.table-wrap {
+	width: 850px;
+	height: 1100px;
+}
+
+.table-container {
+	padding: 3%;
+}
+
+.table-head {
+	height: 100px;
+	display: flex;
+}
+
+.head-side {
+	height: 100%;
+	width: 50%;
+}
+
+.head-entry {
+	height: 31%;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+}
+
+.head-info {
+	margin-left: 5px;
+}
+
+/* Dives */
+.dives-wrap {
+	margin-top: 20px;
+	height: 800px;
+}
+
+.dives-header {
+	height: 30px;
+	display: flex;
+	flex-direction: row;
+}
+
+.dh-blank {
+	width: 30px;
+}
+
+.dh-dive {
+	border: 1px solid black;
+	width: 40px;
+	text-align: center;
+}
+
+.dh-desc {
+	border: 1px solid black;
+	width: 200px;
+	text-align: center;
+}
+
+.dh-pos {
+	border: 1px solid black;
+	width: 40px;
+	text-align: center;
+}
+
+.dh-dd {
+	border: 1px solid black;
+	width: 40px;
+	text-align: center;
+}
+
+.dh-judge {
+	border: 1px solid black;
+	width: 30px;
+	text-align: center;
+}
+
+.dh-net {
+	border: 1px solid black;
+	width: 40px;
+	text-align: center;
+}
+
+.dh-total {
+	border: 1px solid black;
+	width: 130px;
+	text-align: center;
+}
+
+.dh-judges {
+	display: flex;
+	flex-direction: row;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* Scores */
+.dives-scores {
+	display: flex;
+	flex-direction: column;
+}
+
+.score-judge,
+.score-dive,
+.score-desc,
+.score-pos,
+.score-dd,
+.score-net,
+.score-score {
+	height: 100%;
+	border: 1px solid black;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.score-row {
+	height: 50px;
+	display: flex;
+	flex-direction: row;
+}
+
+.score-judge {
+	width: 28px;
+}
+
+.score-dive {
+	font-size: 13px;
+	width: 40px;
+}
+
+.score-desc {
+	width: 200px;
+}
+
+.score-pos {
+	width: 40px;
+}
+
+.score-dd {
+	width: 40px;
+}
+
+.score-score {
+	width: 30px;
+}
+
+.score-net {
+	width: 40px;
+}
+
+.score-total {
+	border: 1px solid black;
+	height: 100%;
+	width: 130px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.st-col {
+	margin-left: 5px;
+}
+
+.score-judges {
+	display: flex;
+	flex-direction: row;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+/* total score */
+.score-total-wrap {
+	margin-top: 20px;
+	margin-left: -20px;
+	width: 100%;
+	text-align: right;
+}
+
+/* footer */
+.signatures-wrap {
+	display: flex;
+	flex-direction: row;
+}
+
+.signature {
+	width: 30%;
+	text-align: center;
+	padding: 20px;
+}

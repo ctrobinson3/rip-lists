@@ -14,6 +14,8 @@ import {
 	Manager,
 	QuickMeet,
 	TempPage,
+	RunQuickMeet,
+	MeetEnd,
 } from '../Pages/pagesIndex';
 
 import { AnimatePresence } from 'framer-motion';
@@ -36,6 +38,8 @@ const AnimatedRoutes = () => {
 					{/* meet manager */}
 					<Route path='/meet-manager' element={<Manager />} />
 					<Route path='/quick-meet' element={<QuickMeet />} />
+					<Route path='/run-meet' element={<RunQuickMeet />} />
+					<Route path='/end-meet' element={<MeetEnd />} />
 
 					{/* temp */}
 					<Route path='/temp' element={<TempPage />} />

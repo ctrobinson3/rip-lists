@@ -1,6 +1,11 @@
 import React from 'react';
 
-const DiverInfo = ({ diver, setDiverInfo }) => {
+const DiverInfo = ({ diver, setDiverInfo, nameCheck, setNameCheck }) => {
+	const checkName = diver.name;
+
+	if (checkName.length == 0) {
+		setNameCheck(false);
+	} else setNameCheck(true);
 	return (
 		<div>
 			<div className='manager-med-txt qm-center'>Diver Info</div>

@@ -19,7 +19,7 @@ const Landing = () => {
 					<div className='square' onClick={() => navigate('./create')}>
 						Cards
 					</div>
-					<div className='square' onClick={() => navigate('./temp')}>
+					<div className='square' onClick={() => navigate('./meets')}>
 						Meets
 					</div>
 				</div>

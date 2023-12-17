@@ -1,3 +1,5 @@
+@import url('colors.css');
+
 Header {
 	text-align: center;
 }
@@ -13,6 +15,74 @@ Header {
 	margin-bottom: 0;
 }
 
+.meet-link-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.meet-link,
+.meet-link-back {
+	cursor: pointer;
+	font-size: 40px;
+	font-weight: 300;
+
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+
+	height: 100px;
+	width: 400px;
+	margin: 10px;
+	border-radius: 0.5em;
+
+	background: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.3),
+		rgba(255, 255, 255, 0.3)
+	);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px;
+}
+.meet-link:hover {
+	color: var(--dark);
+	background: linear-gradient(
+		to right bottom,
+		rgba(187, 187, 187, 0.3),
+		rgba(145, 145, 145, 0.3)
+	);
+}
+.meet-link-back {
+	height: 50px;
+	width: 200px;
+	font-size: 20px;
+}
+.meet-link-back:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 106, 106, 0.3),
+		rgba(184, 0, 0, 0.3)
+	);
+}
+
+.disclaimer {
+	text-align: center;
+	color: red;
+	font-size: 25px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+.dis-body {
+	height: fit-content;
+	width: 500px;
+	color: black;
+	font-size: 13px;
+}
 .meets-h2 {
 	font-size: 40px;
 	font-weight: 300;
@@ -77,4 +147,269 @@ a {
 
 .meet-opt:hover {
 	background-color: grey;
+}
+
+.input-qm {
+	border: 1px solid black;
+}
+
+.qm-header {
+	font-size: 30px;
+}
+
+.center-wrap {
+	margin-top: 75px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/* run meet */
+.run-meet-wrap {
+	margin-top: 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.run-meet-head {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.run-meet-header {
+	font-size: 40px;
+	font-weight: 300;
+}
+
+.foot-btns {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+.smaller-btn {
+	font-size: 20px;
+	height: 50px;
+	width: 200px;
+
+	background: linear-gradient(
+		to right bottom,
+		rgba(122, 142, 255, 0.3),
+		rgba(13, 0, 126, 0.3)
+	);
+}
+
+.dive-valid {
+	font-size: 17px;
+	font-weight: 300;
+}
+
+.dive-correct {
+	margin-top: 10px;
+	text-align: center;
+}
+
+.dive-display {
+	text-align: center;
+	margin: 10px;
+	font-weight: 300;
+	font-size: 20px;
+}
+
+.check-wrap {
+	flex-direction: column;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.message {
+	margin-bottom: 25px;
+}
+
+/* meet run */
+
+.run-meet-body {
+	max-width: 1200px;
+	width: 1200px;
+}
+
+.rm-top {
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+.rm-top-box {
+	width: 30%;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+}
+
+.rmmid {
+	text-align: center;
+}
+
+.rmright {
+	text-align: end;
+}
+
+.rm-mid {
+	margin-top: 20px;
+	display: flex;
+	flex-direction: row;
+	justify-content: center;
+}
+
+.rm-mid-box {
+	width: 20%;
+	text-align: center;
+	border: 1px solid black;
+}
+
+.rmunderline {
+	text-decoration: underline;
+}
+
+/* judge score box */
+.ds-judges {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+	justify-content: center;
+}
+
+.ds-judge-input {
+	margin: 0 20px 0 20px;
+}
+
+.ds-box {
+	border: 1px solid black;
+	text-align: center;
+	height: 30px;
+	color: red;
+}
+
+/* score buttons */
+.ds-score-btns {
+}
+
+.ds-row {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ds-button,
+.ds-shaded {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border: 1px solid black;
+	font-size: 30px;
+	border-radius: 10px;
+	height: 50px;
+	width: 50px;
+	margin: 7px;
+}
+
+.ds-back {
+	background-color: red;
+	width: 100px;
+}
+
+.ds-shaded {
+	background-color: aqua;
+}
+
+.ds-submit,
+.ds-next,
+.ds-endmeet {
+	cursor: pointer;
+	border: 1px solid black;
+	border-radius: 10px;
+	width: 50%;
+	margin-top: 20px;
+	height: 50px;
+	text-align: center;
+	background-color: blue;
+	color: white;
+	font-size: 20px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.ds-total-dis {
+	width: 50%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.ds-next {
+	background-color: rgb(74, 221, 45);
+	color: black;
+}
+
+.ds-endmeet {
+	background-color: red;
+	text-decoration: none;
+}
+
+.ds-foot-btns {
+	display: flex;
+}
+
+.me-wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.me-head {
+	margin-top: 50px;
+}
+
+/* modal */
+/* Modal */
+body.active-modal {
+	overflow-y: hidden;
+}
+
+.dc-modal-container,
+.dc-modal-background {
+	height: 100vh;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	position: fixed;
+	overflow: scroll;
+}
+
+.dc-modal-background {
+	background: rgba(49, 49, 49, 0.8);
+	z-index: 99;
+}
+
+.dc-modal-content {
+	position: absolute;
+	top: 0;
+	margin-top: 50px;
+	left: 50%;
+	transform: translate(-50%, 0);
+	line-height: 1.4;
+	background: #f1f1f1;
+	padding: 14px 28px;
+	border-radius: 10px;
+	width: fit-content;
+	z-index: 1000;
+	overflow: scroll;
 }

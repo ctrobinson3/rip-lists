@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import CheckSixDive from './CheckSixDive';
 import SixDiveInput from './SixDiveInput';
 
-const MainSix = () => {
-	const [verify, setVerify] = useState(false);
-	const [diveList, setDiveList] = useState({
+const MainSix = ({ setVerified, diver }) => {
+	const [verify, setVerify] = useState([true]);
+	const [inputDive, setInputDive] = useState({
 		d1: '',
 		d2: '',
 		d3: '',
@@ -13,11 +13,17 @@ const MainSix = () => {
 		d6: '',
 	});
 
-	const onSet = (e) => {
-		setDiveList({
-			...diveList,
+	const [entry, setEntry] = useState([]);
+
+	const handleInput = (e) => {
+		setInputDive({
+			...inputDive,
 			[e.target.id]: e.target.value,
 		});
+	};
+
+	const onVerify = (e) => {
+		setVerify(e);
 	};
 
 	//pages
@@ -33,13 +39,27 @@ const MainSix = () => {
 		case 1:
 			return (
 				<div className='manager-form'>
-					<SixDiveInput next={next} />
+					<SixDiveInput
+						entry={entry}
+						setEntry={setEntry}
+						next={next}
+						inputDive={inputDive}
+						handleInput={handleInput}
+					/>
 				</div>
 			);
 		case 2:
 			return (
 				<div className='manager-form'>
-					<CheckSixDive back={back} next={next} />
+					<CheckSixDive
+						back={back}
+						entry={entry}
+						verify={verify}
+						onVerify={onVerify}
+						next={next}
+						setVerified={setVerified}
+						diver={diver}
+					/>
 				</div>
 			);
 	}

@@ -26,6 +26,7 @@ const Info = () => {
 					<label>Meet Name:</label>
 					<input
 						type='text'
+						className='input-qm'
 						id='name'
 						value={meetInfo.name}
 						onChange={enterInfo}
@@ -35,8 +36,8 @@ const Info = () => {
 					<label>Gender:</label>
 					<select id='gender' value={meetInfo.gender} onChange={enterInfo}>
 						<option value=''></option>
-						<option value='girls'>Girls</option>
-						<option value='boys'>Boys</option>
+						<option value='Girls'>Girls</option>
+						<option value='Boys'>Boys</option>
 					</select>
 				</div>
 				<div className='qm-form-input'>
@@ -44,7 +45,7 @@ const Info = () => {
 					<select id='event' value={meetInfo.event} onChange={enterInfo}>
 						<option value=''></option>
 						<option value='1 meter'>1 meter</option>
-						<option value='3 meter'>3 meter</option>
+						{/* <option value='3 meter'>3 meter</option> */}
 					</select>
 				</div>
 				<div className='qm-form-input'>
@@ -61,8 +62,8 @@ const Info = () => {
 						<option value=''></option>
 						<option value='2'>2</option>
 						<option value='3'>3</option>
-						<option value='5'>5</option>
-						<option value='7'>7</option>
+						{/* <option value='5'>5</option>
+						<option value='7'>7</option> */}
 					</select>
 				</div>
 			</form>

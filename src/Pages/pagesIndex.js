@@ -10,7 +10,9 @@ import Info from './Info/Info';
 import OpenMeet from './MeetManager/OpenMeet/OpenMeet';
 import Manager from './MeetManager/MeetManager/Manager';
 import QuickMeet from './MeetManager/MeetManager/QuickMeet/QuickMeet';
+import RunQuickMeet from './MeetManager/MeetManager/QuickMeet/RunQuickMeet';
 import TempPage from './temp/TempPage';
+import MeetEnd from './MeetManager/MeetManager/QuickMeet/mainQM/cmp-m-qm/meetEnd/MeetEnd';
 
 export {
 	CreateHome,
@@ -26,4 +28,6 @@ export {
 	Manager,
 	QuickMeet,
 	TempPage,
+	RunQuickMeet,
+	MeetEnd,
 };

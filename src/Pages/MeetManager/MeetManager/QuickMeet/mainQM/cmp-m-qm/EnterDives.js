@@ -5,12 +5,13 @@ import SixDiveInput from './sixdive/SixDiveInput';
 import ElevenDiveInput from './ElevenDiveInput';
 import MainSix from './sixdive/MainSix';
 
-const EnterDives = () => {
+const EnterDives = ({ diver, setDiverInfo, setDiver, setVerified }) => {
 	const numDives = useRecoilState(numDivesAtom);
 
 	// dive amount
 	const diveDisplay = () => {
-		if (numDives.includes('6 dive')) return <MainSix />;
+		if (numDives.includes('6 dive'))
+			return <MainSix setVerified={setVerified} diver={diver} />;
 		else if (numDives.includes('11 dive')) return <ElevenDiveInput />;
 		else return <div>Please select a dive amount!</div>;
 	};

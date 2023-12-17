@@ -5,6 +5,9 @@ import EnterDives from './EnterDives';
 import DiverInfo from './DiverInfo';
 
 const DiverModal = ({ modal, setModal }) => {
+	const [verified, setVerified] = useState(false);
+	const [nameCheck, setNameCheck] = useState(false);
+	const [diverAtom, setDiverAtom] = useRecoilState(diversAtom);
 	const [diver, setDiver] = useState({
 		name: '',
 		grade: '',
@@ -20,6 +23,11 @@ const DiverModal = ({ modal, setModal }) => {
 		});
 	};
 
+	const onEnterDiver = () => {
+		setDiverAtom([...diverAtom, diver]);
+		setModal(!modal);
+	};
+
 	return (
 		<div className='qm-modal-background'>
 			<div className='qm-modal-container'>
@@ -27,18 +35,39 @@ const DiverModal = ({ modal, setModal }) => {
 					<div className='manager-header'>
 						<p>Enter Diver</p>
 					</div>
-					<DiverInfo diver={diver} setDiverInfo={setDiverInfo} />
+					<DiverInfo
+						diver={diver}
+						setDiverInfo={setDiverInfo}
+						nameCheck={nameCheck}
+						setNameCheck={setNameCheck}
+					/>
 
-					<EnterDives diver={diver} setDiverInfo={setDiverInfo} />
+					<EnterDives
+						diver={diver}
+						setDiver={setDiver}
+						setDiverInfo={setDiverInfo}
+						setVerified={setVerified}
+					/>
 					<footer>
-						<button
-							on
-							onClick={() => {
-								setModal(!modal);
-							}}
-						>
-							Close
-						</button>
+						<div className='foot-btns'>
+							{!nameCheck && (
+								<div className='message'>Please enter a name!</div>
+							)}
+							{verified && nameCheck && (
+								<div className='meet-link smaller-btn' onClick={onEnterDiver}>
+									Add Diver
+								</div>
+							)}
+
+							<button
+								on
+								onClick={() => {
+									setModal(!modal);
+								}}
+							>
+								Close
+							</button>
+						</div>
 					</footer>
 				</div>
 			</div>

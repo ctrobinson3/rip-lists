@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
-import { useRecoilState } from 'recoil';
+import { useRecoilState, useRecoilValue } from 'recoil';
 import { diversAtom } from '../recoilQM/atoms-qm';
 import AddedDivers from './cmp-m-qm/AddedDivers';
 import DiverModal from './cmp-m-qm/DiverModal';
 
 const AddDiver = () => {
 	const [divers, setDivers] = useRecoilState(diversAtom);
+	const addedDivers = useRecoilValue(diversAtom);
+
+	//
+	// MOdal
+	//
 	const [modal, setModal] = useState(false);
 	if (modal) {
 		document.body.classList.add('active-modal');
@@ -28,9 +33,11 @@ const AddDiver = () => {
 						Add
 					</button>
 				</div>
-				{divers.map((d, index) => (
-					<AddedDivers key={index} diver={d} />
-				))}
+				<div className='added-diver-list'>
+					{addedDivers.map((d, index) => (
+						<AddedDivers key={index} diver={d} />
+					))}
+				</div>
 			</div>
 
 			{/* modal */}

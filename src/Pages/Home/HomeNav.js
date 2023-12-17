@@ -17,7 +17,7 @@ const HomeNav = () => {
 					<div className='HN-link cursor' onClick={() => navigate('/create')}>
 						Cards
 					</div>
-					<div className='HN-link cursor' onClick={() => navigate('/temp')}>
+					<div className='HN-link cursor' onClick={() => navigate('/meets')}>
 						Meets
 					</div>
 					<div className='HN-link cursor' onClick={() => navigate('/info')}>
