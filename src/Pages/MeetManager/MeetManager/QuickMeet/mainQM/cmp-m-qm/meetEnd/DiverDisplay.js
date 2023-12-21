@@ -100,18 +100,8 @@ const DiverDisplay = ({ thisDiver, index }) => {
 					))}{' '}
 				</div>
 			</div>
-			<div className='download-btn' onClick={download}>
+			<div className='download-btn' onClick={viewDocument}>
 				Download Card
-			</div>
-			<div id='div-print' className='print-div'>
-				<DCTable
-					scores={scores}
-					diveArray={theseDives()}
-					diverName={name}
-					diverSchool={school}
-					meet={meetName}
-					finalScore={calcTotal()}
-				/>
 			</div>
 
 			{/* Dive Card Modal */}
@@ -128,13 +118,14 @@ const DiverDisplay = ({ thisDiver, index }) => {
 								finalScore={calcTotal()}
 							/>
 							<footer>
-								<button
+								<div
+									className='close-btn'
 									onClick={() => {
 										setModal(!modal);
 									}}
 								>
 									Close
-								</button>
+								</div>
 							</footer>
 						</div>
 					</div>

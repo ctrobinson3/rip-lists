@@ -1,0 +1,10 @@
+@import url('colors.css');
+
+.btn-basics {
+	cursor: pointer;
+	text-align: center;
+	user-select: none;
+	font-weight: 300;
+}
+.button-download {
+}

@@ -202,6 +202,22 @@ a {
 		rgba(184, 0, 0, 0.3)
 	);
 }
+.margin {
+	margin: 20px 0 20px 0;
+}
+.close-btn {
+	border-radius: 2rem;
+	margin-top: 20px;
+	width: 50px;
+	text-align: center;
+	padding: 10px;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 106, 106, 0.3),
+		rgba(184, 0, 0, 0.3)
+	);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
 .run-meet-wrap {
 	margin-top: 50px;
 	display: flex;
@@ -239,6 +255,9 @@ a {
 		rgba(13, 0, 126, 0.3)
 	);
 }
+.smaller-btn {
+	margin-top: 0px;
+}
 
 .dive-valid {
 	font-size: 17px;
@@ -262,6 +281,7 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	margin-bottom: -57px;
 }
 
 .message {

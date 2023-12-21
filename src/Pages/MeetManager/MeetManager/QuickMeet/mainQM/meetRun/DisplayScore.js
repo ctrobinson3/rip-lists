@@ -54,8 +54,6 @@ const DisplayScore = ({
 		handleDelete();
 	};
 
-	console.log(submitReady);
-
 	return (
 		<div className='ds-score-display'>
 			<div className='ds-judges'>{judgesScores}</div>

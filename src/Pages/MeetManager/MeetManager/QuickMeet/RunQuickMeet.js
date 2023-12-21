@@ -95,8 +95,6 @@ const RunQuickMeet = () => {
 		setDiveOrder(0);
 	};
 
-	console.log(currDive);
-
 	//
 	// delete
 	//

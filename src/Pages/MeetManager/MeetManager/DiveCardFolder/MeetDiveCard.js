@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import DCTable from './DCTable';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -12,8 +12,14 @@ const MeetDiveCard = ({
 	meet,
 	finalScore,
 }) => {
-	const meetAndName = meet + diverName + diverSchool;
-	const docName = meetAndName.replace(/\s/g, '');
+	// const meetAndName = meet + diverName + diverSchool;
+	// const docName = meetAndName.replace(/\s/g, '');
+	const [docName, setDocName] = useState('');
+
+	const onChange = (e) => {
+		const newValue = e.target.value;
+		setDocName(newValue);
+	};
 
 	const download = () => {
 		const input = document.getElementById('div-print');
@@ -33,7 +39,7 @@ const MeetDiveCard = ({
 
 	return (
 		<div>
-			<div id='div-print'>
+			<div id='div-print' className='print-div'>
 				<DCTable
 					scores={scores}
 					diveArray={diveArray}
@@ -43,7 +49,13 @@ const MeetDiveCard = ({
 					finalScore={finalScore}
 				/>
 			</div>
-			<button onClick={download}>Download</button>
+			<div className='name-doc'>
+				<div className='name-doc-text'>Name Download:</div>
+				<input className='form-input margin' onChange={onChange} />
+				<div className='download-btn' onClick={download}>
+					Download
+				</div>
+			</div>
 		</div>
 	);
 };
