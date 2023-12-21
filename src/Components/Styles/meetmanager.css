@@ -34,7 +34,8 @@ Header {
 	text-align: center;
 
 	height: 100px;
-	width: 400px;
+	width: 70%;
+	max-width: 400px;
 	margin: 10px;
 	border-radius: 0.5em;
 
@@ -79,7 +80,7 @@ Header {
 }
 .dis-body {
 	height: fit-content;
-	width: 500px;
+	max-width: 500px;
 	color: black;
 	font-size: 13px;
 }
@@ -166,6 +167,39 @@ a {
 }
 
 /* run meet */
+.center {
+	text-align: center;
+}
+.add-btn,
+.check-btn {
+	margin-bottom: 30px;
+	cursor: pointer;
+	text-align: center;
+
+	border-radius: 1rem;
+	background: linear-gradient(
+		to right bottom,
+		rgba(214, 214, 214, 0.3),
+		rgba(0, 119, 182, 0.3)
+	);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+.add-btn {
+	padding: 10px;
+}
+.check-btn {
+	margin-top: 15px;
+	padding: 10px;
+}
+.back-btn {
+	padding: 10px;
+	width: 50px;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 106, 106, 0.3),
+		rgba(184, 0, 0, 0.3)
+	);
+}
 .run-meet-wrap {
 	margin-top: 50px;
 	display: flex;
@@ -195,6 +229,7 @@ a {
 	font-size: 20px;
 	height: 50px;
 	width: 200px;
+	border-radius: 1rem;
 
 	background: linear-gradient(
 		to right bottom,
@@ -234,8 +269,8 @@ a {
 /* meet run */
 
 .run-meet-body {
+	width: 80vw;
 	max-width: 1200px;
-	width: 1200px;
 }
 
 .rm-top {
@@ -271,6 +306,10 @@ a {
 	border: 1px solid black;
 }
 
+.rm-mid-info {
+	padding: 0 5px 0 5px;
+}
+
 .rmunderline {
 	text-decoration: underline;
 }
@@ -295,8 +334,6 @@ a {
 }
 
 /* score buttons */
-.ds-score-btns {
-}
 
 .ds-row {
 	display: flex;
@@ -305,17 +342,29 @@ a {
 }
 
 .ds-button,
-.ds-shaded {
+.ds-shaded,
+.ds-submit,
+.ds-next,
+.ds-endmeet {
 	cursor: pointer;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	border: 1px solid black;
 	font-size: 30px;
+	font-weight: 300;
 	border-radius: 10px;
 	height: 50px;
 	width: 50px;
 	margin: 7px;
+
+	background: linear-gradient(
+		to right bottom,
+		rgba(214, 214, 214, 0.3),
+		rgba(0, 119, 182, 0.3)
+	);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+	user-select: none;
 }
 
 .ds-back {
@@ -324,25 +373,71 @@ a {
 }
 
 .ds-shaded {
-	background-color: aqua;
+	background: linear-gradient(
+		to right bottom,
+		rgba(187, 187, 187, 0.3),
+		rgba(2, 4, 116, 0.3)
+	);
+}
+
+.ds-button:hover,
+.ds-back:hover,
+.ds-shaded:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.3),
+		rgba(0, 0, 0, 0.5)
+	);
+}
+
+.ds-button:active,
+.ds-back:active,
+.ds-shaded:active {
+	color: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.6),
+		rgba(0, 0, 0, 0.8)
+	);
 }
 
 .ds-submit,
 .ds-next,
-.ds-endmeet {
+.ds-endmeet,
+.ds-fill {
 	cursor: pointer;
-	border: 1px solid black;
 	border-radius: 10px;
 	width: 50%;
 	margin-top: 20px;
 	height: 50px;
 	text-align: center;
-	background-color: blue;
 	color: white;
 	font-size: 20px;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	user-select: none;
+}
+
+.ds-submit {
+	color: black;
+}
+
+.ds-submit:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.3),
+		rgba(2, 4, 116, 0.3)
+	);
+}
+
+.ds-submit:active {
+	color: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.6),
+		rgba(2, 4, 116, 0.8)
+	);
 }
 
 .ds-total-dis {
@@ -350,16 +445,46 @@ a {
 	display: flex;
 	justify-content: center;
 	align-items: center;
+	font-size: 25px;
+	font-weight: 300;
 }
 
 .ds-next {
-	background-color: rgb(74, 221, 45);
 	color: black;
+	background: linear-gradient(
+		to right bottom,
+		rgba(171, 255, 192, 0.3),
+		rgba(0, 219, 37, 0.3)
+	);
+}
+.ds-next:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(171, 255, 192, 0.6),
+		rgba(0, 219, 37, 0.8)
+	);
+}
+.ds-next:active {
+	color: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(171, 255, 192, 0.6),
+		rgba(2, 116, 21, 0.8)
+	);
 }
 
 .ds-endmeet {
+	color: black;
 	background-color: red;
 	text-decoration: none;
+}
+.ds-endmeet:hover {
+	background-color: rgb(95, 0, 0);
+	text-decoration: none;
+}
+.ds-endmeet:active {
+	color: white;
+	background-color: rgb(36, 0, 0);
 }
 
 .ds-foot-btns {
@@ -373,10 +498,109 @@ a {
 	justify-content: center;
 }
 
-.me-head {
-	margin-top: 50px;
+.me-wrap-2 {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+.me-divers-wrap {
+	width: fit-content;
+	max-width: 1565px;
+	border-radius: 2rem;
+	background-color: var(--light);
+	padding: 20px 0 20px 0;
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+}
+.EM-DD-wrap {
+	display: flex;
 }
 
+@media (max-width: 1565px) {
+	.me-wrap-2 {
+		width: 80vw;
+	}
+
+	.EM-DD-wrap {
+		display: flex;
+		/* width: 500px;
+	height: 600px;
+	overflow: scroll; */
+	}
+	.me-divers-wrap {
+		display: flex;
+		width: 100%;
+		overflow: auto;
+		float: left;
+		position: relative;
+
+		margin-left: -5px;
+	}
+}
+.me-diver-wrap {
+	width: 170px;
+	padding: 20px;
+	margin: 0 20px 0 20px;
+	border-radius: 2rem;
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 5px 10px, rgba(0, 0, 0, 0.24) 0px 5px 10px;
+}
+.me-head {
+	margin-top: 50px;
+	font-size: 50px;
+	font-weight: 300;
+}
+
+.me-name {
+	font-size: 25px;
+}
+.me-txt {
+	font-size: 20px;
+	text-align: center;
+}
+.me-txt-sml {
+	font-size: 14px;
+}
+.me-txt-bld {
+	font-size: 15px;
+	font-weight: 500;
+}
+.me-score {
+	display: flex;
+	flex-direction: row;
+}
+.me-dive-wrap {
+	margin: 10px 0 10px 0;
+}
+.download-btn {
+	cursor: pointer;
+	border-radius: 2rem;
+	padding: 15px;
+	text-align: center;
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 119, 182, 0.3),
+		rgba(0, 119, 182, 0.7)
+	);
+}
+.download-btn:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 119, 182, 0.7),
+		rgba(0, 119, 182, 0.9)
+	);
+}
+.download-btn:active {
+	color: white;
+	background: linear-gradient(
+		to right bottom,
+		rgba(0, 0, 0, 0.7),
+		rgba(0, 0, 0, 0.9)
+	);
+}
 /* modal */
 /* Modal */
 body.active-modal {
@@ -412,4 +636,24 @@ body.active-modal {
 	width: fit-content;
 	z-index: 1000;
 	overflow: scroll;
+}
+.print-div {
+	position: absolute;
+	left: 0;
+	top: -10000px;
+	z-index: -1;
+}
+
+/* cell */
+@media (max-width: 1300px) and (min-width: 700px) {
+}
+
+@media (max-width: 699px) {
+	.rm-top {
+		width: 100%;
+	}
+	.rm-top-box {
+	}
+	.rm-mid {
+	}
 }

@@ -109,7 +109,9 @@ const SixDiveInput = ({ setEntry, next, handleInput, inputDive }) => {
 					onChange={handleInput}
 				/>
 			</div>
-			<button onClick={findDives}>Check Dives</button>
+			<div className='check-btn' onClick={findDives}>
+				Check Dives
+			</div>
 		</div>
 	);
 };

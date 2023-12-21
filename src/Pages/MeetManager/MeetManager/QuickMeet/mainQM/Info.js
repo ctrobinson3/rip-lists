@@ -53,7 +53,7 @@ const Info = () => {
 					<select id='diveAmt' value={numDives} onChange={changeNumDives}>
 						<option value=''></option>
 						<option value='6 dive'>6</option>
-						<option value='11 dive'>11</option>
+						{/* <option value='11 dive'>11</option> */}
 					</select>
 				</div>
 				<div className='qm-form-input'>

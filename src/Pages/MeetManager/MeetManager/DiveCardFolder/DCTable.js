@@ -48,41 +48,49 @@ const DCTable = ({
 				<div className='table-head'>
 					<div className='head-side'>
 						<div className='head-entry'>
-							<b>Name: </b> <p className='head-info'>{diver.name}</p>
+							<div className='bold'>Name: </div>{' '}
+							<p className='head-info'>{diver.name}</p>
 						</div>
 						<div className='head-entry'>
-							<b>School: </b> <p className='head-info'>{diver.school}</p>
+							<div className='bold'>School: </div>{' '}
+							<p className='head-info'>{diver.school}</p>
 						</div>
 						<div className='head-entry'>
-							<b>Coach: </b> <p className='head-info'>{diver.coach}</p>
+							<div className='bold'>Coach: </div>{' '}
+							<p className='head-info'>{diver.coach}</p>
 						</div>
 					</div>
 					<div className='head-side'>
 						<div className='head-entry'>
-							<b>Meet: </b> <p className='head-info'>{diver.meet}</p>
+							<div className='bold'>Meet: </div>{' '}
+							<p className='head-info'>{diver.meet}</p>
 						</div>
 						<div className='head-entry'>
-							<b>Date: </b> <p className='head-info'>{diver.date}</p>
+							<div className='bold'>Date: </div>{' '}
+							<p className='head-info'>{diver.date}</p>
 						</div>
 						<div className='head-entry'>
-							<b>Event: </b> <p className='head-info'>{diver.event}</p>
+							<div className='bold'>Event: </div>{' '}
+							<p className='head-info'>{diver.event}</p>
 						</div>
 					</div>
 				</div>
 				<div className='dives-wrap'>
-					<div className='dives-header'>
-						<div className='dh-blank' />
-						<div className='dh-dive'>Dive</div>
-						<div className='dh-desc'>Description</div>
-						<div className='dh-pos'>Pos.</div>
-						<div className='dh-dd'>DD</div>
-						<div className='dh-judges'>{judgeRow}</div>
-						<div className='dh-net'>Net</div>
-						<div className='dh-total'>Total</div>
-					</div>
-					<div className='dives-scores'>{diveRow}</div>
-					<div className='score-total-wrap'>
-						<b>Official Score: {finalScore}</b>
+					<div className='bord-container'>
+						<div className='dives-header'>
+							<div className='dh-blank' />
+							<div className='dh-dive'>Dive</div>
+							<div className='dh-desc'>Description</div>
+							<div className='dh-pos'>Pos.</div>
+							<div className='dh-dd'>DD</div>
+							<div className='dh-judges'>{judgeRow}</div>
+							<div className='dh-net'>Net</div>
+							<div className='dh-total'>Total</div>
+						</div>
+						<div className='dives-scores'>{diveRow}</div>
+						<div className='score-total-wrap'>
+							<div className='off-score'>Official Score: {finalScore}</div>
+						</div>
 					</div>
 				</div>
 				<div className='signatures-wrap'>

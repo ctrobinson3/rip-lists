@@ -17,11 +17,15 @@ const MeetEnd = () => {
 		<div className='me-wrap'>
 			<HomeNavBurg />
 			<HomeNavDark />
-			<div className='me-head'>Meet Ended</div>
-			<div className='EM-DD-wrap'>
-				{divers.map((d, index) => (
-					<DiverDisplay key={nanoid()} thisDiver={d} index={index} />
-				))}
+			<div className='me-head'>Meet Completed!</div>
+			<div className='me-wrap-2'>
+				<div className='me-divers-wrap'>
+					<div className='EM-DD-wrap'>
+						{divers.map((d, index) => (
+							<DiverDisplay key={nanoid()} thisDiver={d} index={index} />
+						))}
+					</div>
+				</div>
 			</div>
 			<div className='me-foot'>
 				<div className='home-btn' onClick={() => navigate('/')}>

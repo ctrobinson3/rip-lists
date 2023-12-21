@@ -25,13 +25,14 @@ const AddDiver = () => {
 			</div>
 			<div className='manager-table'>
 				<div className='center'>
-					<button
+					<div
+						className='add-btn'
 						onClick={() => {
 							setModal(!modal);
 						}}
 					>
 						Add
-					</button>
+					</div>
 				</div>
 				<div className='added-diver-list'>
 					{addedDivers.map((d, index) => (

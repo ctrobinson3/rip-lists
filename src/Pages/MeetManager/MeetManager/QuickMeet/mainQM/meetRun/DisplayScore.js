@@ -19,6 +19,7 @@ const DisplayScore = ({
 
 	const [currJudge, setCurrJudge] = useRecoilState(judgeAtom);
 	const [submitted, setSubmitted] = useState(false);
+	const [submitReady, setSubmitReady] = useState(false);
 	const judgesScores = [];
 
 	for (let i = 0; i < judgeAmt; i++) {
@@ -28,6 +29,7 @@ const DisplayScore = ({
 
 	const submitScore = () => {
 		handleSubmit();
+		setSubmitReady(false);
 		setSubmitted(true);
 	};
 
@@ -37,12 +39,22 @@ const DisplayScore = ({
 	};
 
 	const handleScore = (val) => {
+		if (currJudge == judgeAmt) {
+			setSubmitReady(true);
+		}
 		if (currJudge <= judgeAmt) {
 			let s = parseFloat(val);
 			setScore((oldArr) => [...oldArr, s]);
 			setCurrJudge(currJudge + 1);
 		}
 	};
+
+	const deleteScore = () => {
+		setSubmitReady(false);
+		handleDelete();
+	};
+
+	console.log(submitReady);
 
 	return (
 		<div className='ds-score-display'>
@@ -76,20 +88,25 @@ const DisplayScore = ({
 					<ScoreButton score='9' handleClick={handleScore} />
 					<ScoreButton score='9.5' handleClick={handleScore} />
 					<ScoreButton score='10' handleClick={handleScore} />
-					<div className='ds-button ds-back' onClick={handleDelete}>
+					<div className='ds-button ds-back' onClick={deleteScore}>
 						BACK
 					</div>
 				</div>
 
 				<div className='ds-foot-btns'>
-					{!meetEnd && !submitted && (
+					{!meetEnd && !submitted && !submitReady && (
+						<div className='ds-fill' onClick={submitScore}>
+							{' '}
+						</div>
+					)}
+					{!meetEnd && !submitted && submitReady && (
 						<div className='ds-submit' onClick={submitScore}>
 							Submit Score{' '}
 						</div>
 					)}
 					{!meetEnd && submitted && (
 						<div className='ds-next' onClick={handleNext}>
-							Next
+							Next Diver
 						</div>
 					)}
 					{meetEnd && (

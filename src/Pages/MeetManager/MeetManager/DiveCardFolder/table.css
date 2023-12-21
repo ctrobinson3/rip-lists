@@ -11,6 +11,8 @@
 .table-head {
 	height: 100px;
 	display: flex;
+
+	border: 3px solid black;
 }
 
 .head-side {
@@ -19,7 +21,7 @@
 }
 
 .head-entry {
-	height: 31%;
+	height: 32%;
 	border: 1px solid black;
 	display: flex;
 	align-items: center;
@@ -33,6 +35,10 @@
 .dives-wrap {
 	margin-top: 20px;
 	height: 800px;
+}
+
+.bord-container {
+	border: 3px solid black;
 }
 
 .dives-header {
@@ -79,10 +85,20 @@
 	border: 1px solid black;
 	width: 40px;
 	text-align: center;
+	padding: 0 4px 0 4px;
+}
+
+.bold {
+	margin-left: 5px;
+	padding: 0 3px 0 3px;
+	font-weight: 500;
+	text-decoration: underline;
+	background-color: rgb(223, 223, 223);
 }
 
 .dh-total {
 	border: 1px solid black;
+	margin-left: 10px;
 	width: 130px;
 	text-align: center;
 }
@@ -100,6 +116,10 @@
 	flex-direction: column;
 }
 
+.col-total {
+	background-color: rgb(206, 206, 206);
+}
+
 .score-judge,
 .score-dive,
 .score-desc,
@@ -112,6 +132,14 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.score-net {
+	padding: 0 4px 0 4px;
+}
+
+.score-total {
+	margin-left: 10px;
 }
 
 .score-row {
@@ -187,4 +215,8 @@
 	width: 30%;
 	text-align: center;
 	padding: 20px;
+}
+
+.off-score {
+	font-size: 20px;
 }

@@ -59,14 +59,15 @@ const DiverModal = ({ modal, setModal }) => {
 								</div>
 							)}
 
-							<button
+							<div
+								className='add-btn back-btn'
 								on
 								onClick={() => {
 									setModal(!modal);
 								}}
 							>
 								Close
-							</button>
+							</div>
 						</div>
 					</footer>
 				</div>

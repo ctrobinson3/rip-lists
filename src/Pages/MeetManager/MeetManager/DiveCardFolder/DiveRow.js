@@ -46,7 +46,7 @@ const DiveRow = ({ i, dive, scores }) => {
 					<b>Dive: </b>
 					{total}
 				</div>
-				<div className='st-col'>
+				<div className='st-col col-total'>
 					<b>Total: {getTotal()}</b>
 				</div>
 			</div>

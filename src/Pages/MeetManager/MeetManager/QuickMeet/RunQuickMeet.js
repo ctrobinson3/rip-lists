@@ -95,10 +95,11 @@ const RunQuickMeet = () => {
 		setDiveOrder(0);
 	};
 
+	console.log(currDive);
+
 	//
 	// delete
 	//
-	console.log(meetData);
 
 	return (
 		<div className='run-meet-page'>
@@ -107,7 +108,7 @@ const RunQuickMeet = () => {
 			<div className='run-meet-wrap'>
 				<div className='run-meet-head'>
 					<div className='run-meet-header'>{meetName}</div>
-					<div className='run-meet-underhead'>
+					<div className='run-meet-underhead rmunderline'>
 						{gender} {event} {numDives}
 					</div>
 					<div className='run-meet-body'>
@@ -123,7 +124,7 @@ const RunQuickMeet = () => {
 								<div className='rm-top-info rmmid'>{currDiver.name}</div>
 							</div>
 							<div className='rm-top-box'>
-								<div className='rm-top-info rmright'>Diver Score:</div>
+								<div className='rm-top-info rmright'>Diver Score: x </div>
 								<div className='rm-top-info rmright'>
 									Diver Place: x / {divers.length}
 								</div>
@@ -138,7 +139,7 @@ const RunQuickMeet = () => {
 								</div>
 							</div>
 							<div className='rm-mid-box'>
-								<div className='rm-mid- rmunderline'>Dive Name</div>
+								<div className='rm-mid-info rmunderline'>Dive Name</div>
 								<div className='rm-mid-info'>
 									{currDive.direction} {currDive.rotation} {currDive.position}
 								</div>

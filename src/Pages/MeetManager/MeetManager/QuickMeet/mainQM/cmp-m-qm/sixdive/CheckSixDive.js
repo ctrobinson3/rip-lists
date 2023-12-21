@@ -18,7 +18,9 @@ const CheckSixDive = ({
 				setVerified={setVerified}
 				diver={diver}
 			/>
-			<button onClick={back}>Back</button>
+			<div className='add-btn back-btn' onClick={back}>
+				Back
+			</div>
 		</div>
 	);
 };
