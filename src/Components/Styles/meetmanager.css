@@ -122,7 +122,9 @@ Header {
 	height: 700px;
 	overflow-y: scroll;
 }
-
+.qm-modal-container {
+	overflow: scroll;
+}
 /* future meets */
 a {
 	font-size: 30px;

@@ -42,7 +42,9 @@ const AddDiver = () => {
 			</div>
 
 			{/* modal */}
-			{modal && <DiverModal modal={modal} setModal={setModal} />}
+			<div className='dive-mod-wrap'>
+				{modal && <DiverModal modal={modal} setModal={setModal} />}
+			</div>
 		</div>
 	);
 };
