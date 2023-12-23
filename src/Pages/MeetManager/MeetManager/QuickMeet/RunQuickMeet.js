@@ -8,6 +8,8 @@ import {
 	judgeAtom,
 	diverScoreAtom,
 	totalScoreAtom,
+	totalsAtom,
+	lastTotalAtom,
 	roundAtom,
 	diverOrderAtom,
 	netAtom,
@@ -33,23 +35,55 @@ const RunQuickMeet = () => {
 	const [total, setTotal] = useRecoilState(totalScoreAtom);
 	const [net, setNet] = useRecoilState(netAtom);
 	const [round, setRound] = useRecoilState(roundAtom);
+	const [lastTotal, setLastTotal] = useRecoilState(lastTotalAtom);
+	//
+	const [currTotal, setCurrTotal] = useRecoilState(totalsAtom);
 
 	// states and vars
 	const [diveScore, setDiveScore] = useState(0);
 	const [diveOrder, setDiveOrder] = useState(0);
+	const [test, setTest] = useState(0);
 	const [meetEnd, setMeetEnd] = useState(false);
 	const currDiver = divers[diveOrder];
 	const cdDivesArr = currDiver.dives;
 	const currDive = cdDivesArr[round];
-
 	// func
+	const setTotalScore = () => {
+		if (round == 0) {
+			setTest(total);
+		}
+	};
+	//score display
+
+	const calcTotal = () => {
+		let rawTotal = 0;
+		for (let i = 0; i < scores.length; i++) {
+			let thisDive = scores[i];
+			let diveTotal = parseFloat(thisDive.total);
+			rawTotal += diveTotal;
+		}
+		const fixedTotal = (t) => {
+			return t.toFixed(2);
+		};
+
+		return fixedTotal(rawTotal);
+	};
+
 	const onNextDiver = () => {
 		setMeetData([
 			...meetData,
-			{ ['id']: diveOrder, ['scores']: scores, ['total']: total, ['net']: net },
+			{
+				['id']: diveOrder,
+				['scores']: scores,
+				['total']: total,
+				['net']: net,
+				['currTotal']: lastTotal,
+			},
 		]);
 		setCurrJudge(1);
 		setScores([]);
+		setLastTotal(0);
+		setCurrTotal(0);
 		setTotal(0);
 		setNet(0);
 		if (diveOrder < divers.length - 1) {
@@ -89,6 +123,17 @@ const RunQuickMeet = () => {
 		}
 	};
 
+	const displayScore = () => {
+		if (round == 0) {
+			return <div>Diver Score: 0</div>;
+		} else {
+			let mdLength = meetData.length;
+			let diverAmount = divers.length;
+			let lastDive = meetData[mdLength - diverAmount];
+			return <div>Diver Score: {lastDive.currTotal}</div>;
+		}
+	};
+
 	const restart = () => {
 		setMeetEnd(false);
 		setRound(0);
@@ -98,11 +143,11 @@ const RunQuickMeet = () => {
 	//
 	// delete
 	//
-
 	return (
 		<div className='run-meet-page'>
 			<HomeNavDark />
 			<HomeNavBurg />
+			<button onClick={setTotalScore}>bot</button>
 			<div className='run-meet-wrap'>
 				<div className='run-meet-head'>
 					<div className='run-meet-header'>{meetName}</div>
@@ -122,7 +167,7 @@ const RunQuickMeet = () => {
 								<div className='rm-top-info rmmid'>{currDiver.name}</div>
 							</div>
 							<div className='rm-top-box'>
-								<div className='rm-top-info rmright'>Diver Score: x </div>
+								<div className='rm-top-info rmright'>{displayScore()}</div>
 								<div className='rm-top-info rmright'>
 									Diver Place: x / {divers.length}
 								</div>
@@ -158,7 +203,12 @@ const RunQuickMeet = () => {
 								setDiveScore={setDiveScore}
 								next={onNextDiver}
 								meetEnd={meetEnd}
+								meetInformation={meetData}
 								judge={meet.judgeAmt}
+								setMeetEnd={setMeetEnd}
+								diveOrder={diveOrder}
+								divers={divers}
+								round={round}
 							/>
 						</div>
 					</div>

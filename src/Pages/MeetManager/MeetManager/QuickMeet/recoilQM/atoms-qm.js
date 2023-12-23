@@ -56,3 +56,12 @@ export const netAtom = atom({
 	key: 'netAtom',
 	default: 0,
 });
+
+export const totalsAtom = atom({
+	key: 'totalsAtom',
+	default: 0,
+});
+export const lastTotalAtom = atom({
+	key: 'lastTotalAtom',
+	default: 0,
+});

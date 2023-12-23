@@ -1,8 +1,12 @@
 import React, { useState } from 'react';
 import DisplayDives from './DisplayDives';
 import MeetDiveCard from '../../../../DiveCardFolder/MeetDiveCard';
-import { meetDataAtom, meetInfoAtom } from '../../../recoilQM/atoms-qm';
-import { useRecoilValue } from 'recoil';
+import {
+	meetDataAtom,
+	meetInfoAtom,
+	totalsAtom,
+} from '../../../recoilQM/atoms-qm';
+import { useRecoilValue, useRecoilState } from 'recoil';
 import DCTable from '../../../../DiveCardFolder/DCTable';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
@@ -44,6 +48,7 @@ const DiverDisplay = ({ thisDiver, index }) => {
 		const fixedTotal = (t) => {
 			return t.toFixed(2);
 		};
+
 		return fixedTotal(rawTotal);
 	};
 
@@ -79,6 +84,10 @@ const DiverDisplay = ({ thisDiver, index }) => {
 		});
 	};
 
+	//
+	// delete
+	//
+
 	return (
 		<div className='me-diver-wrap'>
 			<div className='me-name'>{name}</div>
@@ -106,9 +115,9 @@ const DiverDisplay = ({ thisDiver, index }) => {
 
 			{/* Dive Card Modal */}
 			{modal && (
-				<div className='dc-modal-background'>
-					<div className='dc-modal-container'>
-						<div className='dc-modal-content'>
+				<div className='dc-modal-background '>
+					<div className='dc-modal-container '>
+						<div className='dc-modal-content dc-modal'>
 							<MeetDiveCard
 								scores={scores}
 								diveArray={theseDives()}

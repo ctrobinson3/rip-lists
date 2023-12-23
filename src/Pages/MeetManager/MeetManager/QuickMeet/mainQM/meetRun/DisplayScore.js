@@ -49,10 +49,19 @@ const DisplayScore = ({
 		}
 	};
 
+	const endMeet = () => {
+		handleNext();
+		navigate('/end-meet');
+	};
+
 	const deleteScore = () => {
 		setSubmitReady(false);
 		handleDelete();
 	};
+
+	//
+	// Delete
+	//
 
 	return (
 		<div className='ds-score-display'>
@@ -108,7 +117,7 @@ const DisplayScore = ({
 						</div>
 					)}
 					{meetEnd && (
-						<div className='ds-endmeet' onClick={() => navigate('/end-meet')}>
+						<div className='ds-endmeet' onClick={endMeet}>
 							End Meet
 						</div>
 					)}
