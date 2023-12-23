@@ -26,9 +26,9 @@ const MeetEnd = () => {
 			<HomeNavBurg />
 			<HomeNavDark />
 			<div className='me-head'>Meet Completed!</div>
-			<div className='me-results-download'>
+			{/* <div className='me-results-download'>
 				<div className='download-btn'>Download Results</div>
-			</div>
+			</div> */}
 			<div className='me-wrap-2'>
 				<div className='me-divers-wrap'>
 					<div className='EM-DD-wrap'>
