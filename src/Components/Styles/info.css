@@ -19,7 +19,11 @@
 .info-table {
 	height: fit-content;
 	width: 60%;
-	border: 1px solid black;
+	max-width: 1200px;
+	border-radius: 2rem;
+
+	background: rgba(255, 255, 255, 0.3);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
 }
 
 .info-search {
@@ -43,20 +47,66 @@
 	width: 300px;
 	font-size: 40px;
 	font-weight: 300;
-	border: 1px solid black;
 	margin: 40px;
 	cursor: pointer;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+	border-radius: 1rem;
+	background: linear-gradient(
+		to right bottom,
+		rgba(214, 214, 214, 0.3),
+		rgba(0, 119, 182, 0.3)
+	);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
 }
 
 .cat-wrap:hover {
-	background-color: blue;
+	background: linear-gradient(
+		to right bottom,
+		rgba(214, 214, 214, 0.5),
+		rgba(0, 119, 182, 0.5)
+	);
 }
 
 .dive-display-header {
 	font-size: 50px;
 	font-weight: 300;
 	margin: 20px;
+}
+
+.indie-dive-wrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.individual-dive {
+	margin: 2px;
+
+	width: fit-content;
+	cursor: pointer;
+}
+
+.selected-dive-wrap {
+	position: fixed;
+	padding: 20px;
+	top: 50%;
+	right: 20px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+	border-radius: 1rem;
+	border: 1px solid black;
+}
+
+.btn-wrap {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 30px;
 }

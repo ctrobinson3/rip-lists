@@ -88,7 +88,7 @@ const dives = ({ entry, verify }) => {
 		if (total > 0) {
 			return (
 				<div className='dive-display' style={{ fontWeight: 800 }}>
-					DD: {total}
+					Opt DD: {total.toFixed(1)}
 				</div>
 			);
 		}

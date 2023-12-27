@@ -2,7 +2,7 @@ import React from 'react';
 import { diveArrayFunction } from '../../../Components/DiveLists/DiveArray';
 
 import { useRecoilState } from 'recoil';
-import { categoryAtom, divesAtom } from './atomsTable';
+import { categoryAtom, divesAtom, selectedDiveAtom } from './atomsTable';
 
 const CategorySelect = ({ next }) => {
 	const diveArr = diveArrayFunction();

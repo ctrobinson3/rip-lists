@@ -48,11 +48,7 @@ const RunQuickMeet = () => {
 	const cdDivesArr = currDiver.dives;
 	const currDive = cdDivesArr[round];
 	// func
-	const setTotalScore = () => {
-		if (round == 0) {
-			setTest(total);
-		}
-	};
+
 	//score display
 
 	const calcTotal = () => {
@@ -147,7 +143,6 @@ const RunQuickMeet = () => {
 		<div className='run-meet-page'>
 			<HomeNavDark />
 			<HomeNavBurg />
-			<button onClick={setTotalScore}>bot</button>
 			<div className='run-meet-wrap'>
 				<div className='run-meet-head'>
 					<div className='run-meet-header'>{meetName}</div>

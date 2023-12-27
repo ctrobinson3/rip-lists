@@ -162,8 +162,8 @@ const Dives = ({ entry, onVerify, handleUnderNine }) => {
 		if (optTotal > 0 && volTotal > 0) {
 			return (
 				<div className='dive-display' style={{ fontWeight: 800 }}>
-					<p>Opt DD: {optTotal}</p>
-					<p>Vol DD: {volTotal}</p>
+					<p>Opt DD: {optTotal.toFixed(1)}</p>
+					<p>Vol DD: {volTotal.toFixed(1)}</p>
 					{/* {volButton()} */}
 				</div>
 			);

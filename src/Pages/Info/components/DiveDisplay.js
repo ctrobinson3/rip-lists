@@ -22,7 +22,11 @@ const DiveDisplay = ({ back }) => {
 					return <IndividualDives dive={d} key={index} />;
 				})}
 			</div>
-			<button onClick={back}>back</button>
+			<div className='btn-wrap'>
+				<div className='close-btn' onClick={back}>
+					Back
+				</div>
+			</div>
 		</div>
 	);
 };

@@ -1,11 +1,16 @@
 import React, { useState } from 'react';
 import '../../Components/Styles/info.css';
 import DivesMain from './components/DivesMain';
+import SelectedDiveInfo from './components/SelectedDiveInfo';
 import HomeNavDark from '../Home/HomeNavDark';
 import HomeNavBurg from '../Home/HomeNavBurg';
+//recoil
+import { isModal } from './components/atomsTable';
+import { useRecoilValue } from 'recoil';
 
 const Info = () => {
 	const [boardHeight, setBoardHeight] = useState('1');
+	const modalSet = useRecoilValue(isModal);
 
 	const handleChange = (e) => {
 		setBoardHeight(e.target.value);
@@ -34,6 +39,11 @@ const Info = () => {
 					<DivesMain height={boardHeight} />
 				</div>
 			</div>
+			{modalSet && (
+				<div className='modal-wrap'>
+					<SelectedDiveInfo />{' '}
+				</div>
+			)}
 		</div>
 	);
 };
