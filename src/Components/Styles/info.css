@@ -110,3 +110,56 @@
 	align-items: center;
 	margin-bottom: 30px;
 }
+
+/* dive box */
+.dbox-info {
+	display: flex;
+	flex-direction: row;
+	width: 100%;
+	justify-content: center;
+	align-items: center;
+}
+
+.dbox-head {
+	font-size: 25px;
+}
+
+.dbox-dive {
+	cursor: pointer;
+	margin: 0 10px 10px 10px;
+	background: linear-gradient(
+		to right bottom,
+		rgba(255, 255, 255, 0.9),
+		rgba(255, 255, 255, 0.1)
+	);
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+	padding: 8px;
+	border-radius: 1rem;
+}
+.dbox-dive:hover {
+	background: linear-gradient(
+		to right bottom,
+		rgba(61, 61, 61, 0.9),
+		rgba(0, 0, 0, 0.5)
+	);
+	color: white;
+}
+.dbox-wrap {
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dbox-container {
+	background: linear-gradient(
+		to right bottom,
+		rgba(214, 214, 214, 0.5),
+		rgba(0, 119, 182, 0.3)
+	);
+
+	box-shadow: rgba(0, 0, 0, 0.12) 0px 2px 4px, rgba(0, 0, 0, 0.24) 0px 2px 4px;
+	margin: 5px;
+	padding-top: 10px;
+	min-width: 220px;
+	border-radius: 1rem;
+}

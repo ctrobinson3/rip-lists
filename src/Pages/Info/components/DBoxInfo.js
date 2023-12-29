@@ -2,7 +2,7 @@ import React from 'react';
 import { useRecoilState } from 'recoil';
 import { selectedDiveAtom, isModal } from './atomsTable';
 
-const IndividualDives = ({ dive }) => {
+const DBoxInfo = ({ dive }) => {
 	const [dives, setDives] = useRecoilState(selectedDiveAtom);
 	const [modal, setModal] = useRecoilState(isModal);
 
@@ -14,14 +14,11 @@ const IndividualDives = ({ dive }) => {
 	};
 
 	return (
-		<div className='indie-dive-wrap'>
-			<div className='individual-dive' onClick={selectDive}>
-				{dive.num}
-				{dive.letter} {dive.direction} {dive.rotation} {dive.position}{' '}
-				{dive.difficulty}
-			</div>
+		<div className='dbox-dive' onClick={selectDive}>
+			<div>{dive.letter}</div>
+			<div>{dive.difficulty}</div>
 		</div>
 	);
 };
 
-export default IndividualDives;
+export default DBoxInfo;
