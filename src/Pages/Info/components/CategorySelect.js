@@ -4,7 +4,7 @@ import { diveArrayFunction } from '../../../Components/DiveLists/DiveArray';
 import { useRecoilState } from 'recoil';
 import { categoryAtom, divesAtom, selectedDiveAtom } from './atomsTable';
 
-const CategorySelect = ({ next }) => {
+const CategorySelect = ({ next, setTwist }) => {
 	const diveArr = diveArrayFunction();
 
 	const [category, setCategory] = useRecoilState(categoryAtom);
@@ -36,6 +36,11 @@ const CategorySelect = ({ next }) => {
 		setCatDives(arr);
 	};
 
+	const chooseCategory = (div) => {
+		if (div == 5) setTwist();
+		else next();
+	};
+
 	return (
 		<div className='dm-wrap'>
 			<div className='categories-wrap'>
@@ -45,9 +50,10 @@ const CategorySelect = ({ next }) => {
 							className='cat-wrap'
 							key={index}
 							onClick={() => {
+								chooseCategory(d);
 								setCategory(d);
 								pushDives(d);
-								next();
+								chooseCategory(d);
 							}}
 						>
 							{categoryName(d)}
